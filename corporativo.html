@@ -97,6 +97,55 @@
       color: var(--oscuro);
     }
 
+    /* Brands Carousel */
+    .brands-section {
+      padding: 60px 0;
+      background-color: var(--blanco);
+    }
+    
+    .brands-title {
+      text-align: center;
+      color: var(--primario);
+      margin-bottom: 40px;
+      font-weight: 700;
+    }
+    
+    .brands-carousel {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+    }
+    
+    .brands-track {
+      display: flex;
+      animation: scroll 30s linear infinite;
+      width: calc(250px * 14); /* Adjust based on number of logos */
+    }
+    
+    .brand-logo {
+      height: 80px;
+      width: auto;
+      margin: 0 40px;
+      object-fit: contain;
+      filter: grayscale(100%);
+      opacity: 0.7;
+      transition: all 0.3s ease;
+    }
+    
+    .brand-logo:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+    
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-250px * 7)); /* Half of total width */
+      }
+    }
+
     /* Contact Form */
     .contact-section {
       background-color: var(--blanco);
@@ -250,12 +299,39 @@
     </div>
   </div>
 
+  <!-- Brands Carousel -->
+  <section class="brands-section">
+    <div class="container">
+      <h3 class="brands-title">Nuestros Socios Comerciales</h3>
+      <div class="brands-carousel">
+        <div class="brands-track">
+          <!-- Duplicate logos to create infinite loop effect -->
+          <img src="https://via.placeholder.com/200x80?text=LOGO1" alt="Brand Logo" class="brand-logo">
+          <img src="https://via.placeholder.com/150x80?text=LOGO2" alt="Brand Logo" class="brand-logo">
+          <img src="https://via.placeholder.com/250x80?text=LOGO3" alt="Brand Logo" class="brand-logo">
+          <img src="https://via.placeholder.com/180x80?text=LOGO4" alt="Brand Logo" class="brand-logo">
+          <img src="https://via.placeholder.com/220x80?text=LOGO5" alt="Brand Logo" class="brand-logo">
+          <img src="https://via.placeholder.com/170x80?text=LOGO6" alt="Brand Logo" class="brand-logo">
+          <img src="https://via.placeholder.com/200x80?text=LOGO7" alt="Brand Logo" class="brand-logo">
+          <!-- Duplicates -->
+          <img src="https://via.placeholder.com/200x80?text=LOGO1" alt="Brand Logo" class="brand-logo">
+          <img src="https://via.placeholder.com/150x80?text=LOGO2" alt="Brand Logo" class="brand-logo">
+          <img src="https://via.placeholder.com/250x80?text=LOGO3" alt="Brand Logo" class="brand-logo">
+          <img src="https://via.placeholder.com/180x80?text=LOGO4" alt="Brand Logo" class="brand-logo">
+          <img src="https://via.placeholder.com/220x80?text=LOGO5" alt="Brand Logo" class="brand-logo">
+          <img src="https://via.placeholder.com/170x80?text=LOGO6" alt="Brand Logo" class="brand-logo">
+          <img src="https://via.placeholder.com/200x80?text=LOGO7" alt="Brand Logo" class="brand-logo">
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact Form Section -->
   <section class="contact-section">
     <div class="container">
       <div class="contact-form">
         <h3 class="form-title">Contáctenos</h3>
-        <form id="contactForm" action="https://formspree.io/f/mzzvqvlv" method="POST">
+        <form id="contactForm" action="https://formspree.io/f/carla.chour@promotorsgt.com" method="POST">
           <div class="mb-3">
             <label for="nombre" class="form-label required-field">Nombre</label>
             <input type="text" class="form-control" id="nombre" name="nombre" required>
