@@ -35,6 +35,16 @@
     .navbar .nav-link:hover {
       color: var(--secundario) !important;
     }
+    
+    /* Logo styling */
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+    }
+    .navbar-logo {
+      height: 40px;
+      margin-right: 10px;
+    }
 
     /* Hero Section */
     .hero {
@@ -249,7 +259,10 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand" href="#">Nodox Guatemala</a>
+      <a class="navbar-brand" href="#">
+        <img src="nodoxblanco.png" alt="Nodox Guatemala Logo" class="navbar-logo">
+        Nodox Guatemala
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
         <span class="navbar-toggler-icon"></span>
       </button>
