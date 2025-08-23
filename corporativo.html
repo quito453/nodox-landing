@@ -3,9 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nodox Guatemala</title>
+  <title>Nodox Guatemala - Soluciones Corporativas en Hardware y Software</title>
+  <meta name="description" content="Proveedor líder de hardware y software corporativo en Guatemala. Soluciones tecnológicas con entrega en 24 horas.">
   <link rel="icon" href="icon.ico" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
   <style>
     /* Paleta Nodox */
     :root {
@@ -26,6 +28,7 @@
     /* Navbar */
     .navbar {
       background-color: var(--primario);
+      padding: 12px 0;
     }
     .navbar .nav-link,
     .navbar-brand {
@@ -73,6 +76,8 @@
     .hero-content {
       position: relative;
       z-index: 1;
+      max-width: 800px;
+      padding: 0 20px;
     }
     
     .hero h1 {
@@ -107,10 +112,121 @@
       color: var(--oscuro);
     }
 
+    /* Benefits Section */
+    .benefits-section {
+      padding: 80px 0;
+      background-color: var(--blanco);
+    }
+    
+    .benefit-card {
+      text-align: center;
+      padding: 30px 20px;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+      height: 100%;
+    }
+    
+    .benefit-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .benefit-icon {
+      font-size: 3rem;
+      color: var(--primario);
+      margin-bottom: 20px;
+    }
+
+    /* Products Section */
+    .products-section {
+      padding: 80px 0;
+      background-color: var(--gris-claro);
+    }
+    
+    .product-tabs {
+      margin-bottom: 40px;
+    }
+    
+    .product-tab {
+      padding: 12px 30px;
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      font-weight: 600;
+      color: var(--oscuro);
+      transition: all 0.3s ease;
+    }
+    
+    .product-tab.active {
+      border-bottom: 3px solid var(--secundario);
+      color: var(--primario);
+    }
+    
+    .product-tab:hover:not(.active) {
+      color: var(--primario);
+    }
+    
+    .product-card {
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
+    }
+    
+    .product-img {
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .product-card .card-body {
+      padding: 20px;
+    }
+    
+    .product-price {
+      color: var(--primario);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+    
+    /* Testimonials Section */
+    .testimonials-section {
+      padding: 80px 0;
+      background-color: var(--blanco);
+    }
+    
+    .testimonial-card {
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0px 5px 15px rgba(0,0,0,0.08);
+      margin: 15px;
+      height: 100%;
+    }
+    
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+    
+    .testimonial-author {
+      font-weight: 600;
+      color: var(--primario);
+    }
+    
+    .testimonial-role {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
     /* Brands Carousel */
     .brands-section {
       padding: 60px 0;
-      background-color: var(--blanco);
+      background-color: var(--gris-claro);
     }
     
     .brands-title {
@@ -156,14 +272,37 @@
       }
     }
 
+    /* CTA Section */
+    .cta-section {
+      padding: 100px 0;
+      background: linear-gradient(rgba(0, 26, 51, 0.9), rgba(0, 26, 51, 0.9)), url('https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+    }
+    
+    .cta-title {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    
+    .cta-text {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     /* Contact Form */
     .contact-section {
       background-color: var(--blanco);
-      padding: 60px 0;
+      padding: 80px 0;
     }
     
     .contact-form {
-      max-width: 700px;
+      max-width: 800px;
       margin: 0 auto;
       background-color: var(--blanco);
       padding: 40px;
@@ -223,41 +362,88 @@
       color: var(--oscuro);
     }
 
-    /* Tarjetas */
-    .card {
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0px 4px 10px rgba(0,0,0,0.08);
-      background-color: var(--blanco);
-    }
-    .card-title {
-      color: var(--primario);
-      font-weight: 600;
-    }
-    .card-text {
-      color: #444;
-    }
-
     /* Footer */
     footer {
       background-color: var(--oscuro);
       color: var(--blanco);
-      padding: 15px 0;
+      padding: 40px 0 15px;
+    }
+    
+    .footer-links {
+      margin-bottom: 30px;
+    }
+    
+    .footer-links h5 {
+      color: var(--secundario);
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: var(--blanco);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--secundario);
+    }
+    
+    .social-links a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      color: white;
+      margin-right: 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      background-color: var(--secundario);
+      color: var(--oscuro);
+    }
+    
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      margin-top: 30px;
       text-align: center;
       font-size: 0.9rem;
     }
-    footer a {
-      color: var(--secundario);
-      text-decoration: none;
-    }
-    footer a:hover {
-      text-decoration: underline;
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero h2 {
+        font-size: 1.5rem;
+      }
+      
+      .hero-btn {
+        padding: 12px 30px;
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
       <a class="navbar-brand" href="#">
         <img src="nodoxblanco.png" alt="Nodox Guatemala Logo" class="navbar-logo">
@@ -267,103 +453,318 @@
       </button>
       <div class="collapse navbar-collapse" id="menu">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#marcas">Marcas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero" id="inicio">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1>Nodox Guatemala</h1>
-      <h2>Entrega en 24 horas</h2>
-      <button class="hero-btn">Cotizar</button>
+      <h1>Soluciones Tecnológicas Corporativas</h1>
+      <h2>Hardware y Software con Entrega en 24 horas</h2>
+      <button class="hero-btn" onclick="scrollToContact()">Solicitar Cotización</button>
     </div>
   </section>
 
-  <!-- Contenido -->
-  <div class="container py-5">
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card p-3">
-          <h5 class="card-title">Título de Tarjeta</h5>
-          <p class="card-text">Este es un ejemplo de descripción para la tarjeta.</p>
-          <a href="#" class="btn btn-primary">Ver más</a>
+  <!-- Benefits Section -->
+  <section class="benefits-section">
+    <div class="container">
+      <div class="row text-center mb-5">
+        <div class="col-12">
+          <h2 class="mb-3">¿Por qué elegirnos?</h2>
+          <p class="lead">Ofrecemos las mejores soluciones tecnológicas para tu empresa</p>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card p-3">
-          <h5 class="card-title">TCambio</h5>
-          <p class="card-text">Este es un ejemplo de descripción para la tarjeta.</p>
-          <a href="#" class="btn btn-primary">Ver más</a>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="bi bi-truck"></i>
+            </div>
+            <h4>Entrega Rápida</h4>
+            <p>Entregamos en 24 horas en la ciudad de Guatemala y 72 horas a nivel nacional.</p>
+          </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card p-3">
-          <h5 class="card-title">Título de Tarjeta</h5>
-          <p class="card-text">Este es un ejemplo de descripción para la tarjeta.</p>
-          <a href="#" class="btn btn-primary">Ver más</a>
+        <div class="col-md-4">
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="bi bi-shield-check"></i>
+            </div>
+            <h4>Productos Originales</h4>
+            <p>Todos nuestros productos son 100% originales con garantía del fabricante.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="bi bi-headset"></i>
+            </div>
+            <h4>Soporte Técnico</h4>
+            <p>Asesoría especializada antes, durante y después de tu compra.</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="products-section" id="productos">
+    <div class="container">
+      <div class="row text-center mb-5">
+        <div class="col-12">
+          <h2 class="mb-3">Nuestros Productos</h2>
+          <p class="lead">Soluciones de hardware y software para empresas de todos los tamaños</p>
+        </div>
+      </div>
+      
+      <div class="row justify-content-center product-tabs mb-5">
+        <div class="col-auto">
+          <button class="product-tab active" data-filter="all">Todos</button>
+        </div>
+        <div class="col-auto">
+          <button class="product-tab" data-filter="hardware">Hardware</button>
+        </div>
+        <div class="col-auto">
+          <button class="product-tab" data-filter="software">Software</button>
+        </div>
+        <div class="col-auto">
+          <button class="product-tab" data-filter="accesorios">Accesorios</button>
+        </div>
+      </div>
+      
+      <div class="row g-4 products-container">
+        <div class="col-md-4 product-item" data-category="hardware">
+          <div class="product-card">
+            <img src="https://images.pexels.com/photos/705675/pexels-photo-705675.jpeg" class="card-img-top product-img" alt="Laptop empresarial">
+            <div class="card-body">
+              <h5 class="card-title">Laptops Empresariales</h5>
+              <p class="card-text">Equipos de alto rendimiento para profesionales.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="product-price">Desde Q7,500</span>
+                <button class="btn btn-primary" onclick="scrollToContact()">Cotizar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 product-item" data-category="hardware">
+          <div class="product-card">
+            <img src="https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg" class="card-img-top product-img" alt="Workstation">
+            <div class="card-body">
+              <h5 class="card-title">Workstations</h5>
+              <p class="card-text">Estaciones de trabajo para diseño y desarrollo.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="product-price">Desde Q12,000</span>
+                <button class="btn btn-primary" onclick="scrollToContact()">Cotizar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 product-item" data-category="software">
+          <div class="product-card">
+            <img src="https://images.pexels.com/photos/3949101/pexels-photo-3949101.jpeg" class="card-img-top product-img" alt="Software de oficina">
+            <div class="card-body">
+              <h5 class="card-title">Suites de Oficina</h5>
+              <p class="card-text">Licencias Microsoft Office para toda tu empresa.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="product-price">Desde Q850/user</span>
+                <button class="btn btn-primary" onclick="scrollToContact()">Cotizar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 product-item" data-category="software">
+          <div class="product-card">
+            <img src="https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg" class="card-img-top product-img" alt="Software de seguridad">
+            <div class="card-body">
+              <h5 class="card-title">Software de Seguridad</h5>
+              <p class="card-text">Soluciones antivirus y protección para endpoints.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="product-price">Desde Q450/user</span>
+                <button class="btn btn-primary" onclick="scrollToContact()">Cotizar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 product-item" data-category="accesorios">
+          <div class="product-card">
+            <img src="https://images.pexels.com/photos/2115256/pexels-photo-2115256.jpeg" class="card-img-top product-img" alt="Monitor profesional">
+            <div class="card-body">
+              <h5 class="card-title">Monitores Profesionales</h5>
+              <p class="card-text">Pantallas de alta resolución para trabajo especializado.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="product-price">Desde Q2,200</span>
+                <button class="btn btn-primary" onclick="scrollToContact()">Cotizar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 product-item" data-category="accesorios">
+          <div class="product-card">
+            <img src="https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg" class="card-img-top product-img" alt="Disco duro">
+            <div class="card-body">
+              <h5 class="card-title">Almacenamiento NAS</h5>
+              <p class="card-text">Sistemas de almacenamiento en red para empresas.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="product-price">Desde Q3,800</span>
+                <button class="btn btn-primary" onclick="scrollToContact()">Cotizar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="row text-center mb-5">
+        <div class="col-12">
+          <h2 class="mb-3">Lo que dicen nuestros clientes</h2>
+          <p class="lead">Empresas que confían en nuestros productos y servicios</p>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <div class="testimonial-text">
+              "Hemos equipado toda nuestra oficina con hardware de Nodox. Su servicio de entrega en 24 horas nos ha salvado en múltiples ocasiones."
+            </div>
+            <div class="testimonial-author">Carlos Méndez</div>
+            <div class="testimonial-role">Director de TI, Empresa Financiera</div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <div class="testimonial-text">
+              "Las licencias de software que adquirimos han sido impecables. Gran soporte técnico y siempre disponibles para resolver dudas."
+            </div>
+            <div class="testimonial-author">María González</div>
+            <div class="testimonial-role">Gerente, Consultora Internacional</div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <div class="testimonial-text">
+              "La relación calidad-precio de sus productos es excelente. Hemos reducido costos sin sacrificar rendimiento ni calidad."
+            </div>
+            <div class="testimonial-author">Javier López</div>
+            <div class="testimonial-role">CEO, Startup Tecnológica</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Brands Carousel -->
-  <section class="brands-section">
+  <section class="brands-section" id="marcas">
     <div class="container">
-      <h3 class="brands-title">Nuestros Socios Comerciales</h3>
+      <h3 class="brands-title">Marcas que distribuimos</h3>
       <div class="brands-carousel">
         <div class="brands-track">
           <!-- Duplicate logos to create infinite loop effect -->
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/HP_logo_2008.svg" alt="Brand Logo" class="brand-logo">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Lenovo_Global_Corporate_Logo.png" alt="Brand Logo" class="brand-logo">
-          <img src="https://cdn.freebiesupply.com/images/large/2x/dell-logo-transparent.png" alt="Brand Logo" class="brand-logo">
-          <img src="https://cdn.freebiesupply.com/logos/large/2x/jbl-2-logo-svg-vector.svg" alt="Brand Logo" class="brand-logo">
-          <img src="https://1000logos.net/wp-content/uploads/2020/02/Plantronics-Logo.jpg" alt="Brand Logo" class="brand-logo">
-          <img src="https://purepng.com/public/uploads/large/purepng.com-microsoft-logologobrand-logoiconslogos-251519939132du80p.png" alt="Brand Logo" class="brand-logo">
-          <img src="https://cdn.freebiesupply.com/images/large/2x/cisco-logo-transparent.png" alt="Brand Logo" class="brand-logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/HP_logo_2008.svg" alt="HP Logo" class="brand-logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Lenovo_Global_Corporate_Logo.png" alt="Lenovo Logo" class="brand-logo">
+          <img src="https://cdn.freebiesupply.com/images/large/2x/dell-logo-transparent.png" alt="Dell Logo" class="brand-logo">
+          <img src="https://cdn.freebiesupply.com/logos/large/2x/jbl-2-logo-svg-vector.svg" alt="JBL Logo" class="brand-logo">
+          <img src="https://1000logos.net/wp-content/uploads/2020/02/Plantronics-Logo.jpg" alt="Plantronics Logo" class="brand-logo">
+          <img src="https://purepng.com/public/uploads/large/purepng.com-microsoft-logologobrand-logoiconslogos-251519939132du80p.png" alt="Microsoft Logo" class="brand-logo">
+          <img src="https://cdn.freebiesupply.com/images/large/2x/cisco-logo-transparent.png" alt="Cisco Logo" class="brand-logo">
           <!-- Duplicates -->
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/HP_logo_2008.svg" alt="Brand Logo" class="brand-logo">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Lenovo_Global_Corporate_Logo.png" alt="Brand Logo" class="brand-logo">
-          <img src="https://cdn.freebiesupply.com/images/large/2x/dell-logo-transparent.png" alt="Brand Logo" class="brand-logo">
-          <img src="https://cdn.freebiesupply.com/logos/large/2x/jbl-2-logo-svg-vector.svg" alt="Brand Logo" class="brand-logo">
-          <img src="https://1000logos.net/wp-content/uploads/2020/02/Plantronics-Logo.jpg" alt="Brand Logo" class="brand-logo">
-          <img src="https://purepng.com/public/uploads/large/purepng.com-microsoft-logologobrand-logoiconslogos-251519939132du80p.png" alt="Brand Logo" class="brand-logo">
-          <img src="https://cdn.freebiesupply.com/images/large/2x/cisco-logo-transparent.png" alt="Brand Logo" class="brand-logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/HP_logo_2008.svg" alt="HP Logo" class="brand-logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Lenovo_Global_Corporate_Logo.png" alt="Lenovo Logo" class="brand-logo">
+          <img src="https://cdn.freebiesupply.com/images/large/2x/dell-logo-transparent.png" alt="Dell Logo" class="brand-logo">
+          <img src="https://cdn.freebiesupply.com/logos/large/2x/jbl-2-logo-svg-vector.svg" alt="JBL Logo" class="brand-logo">
+          <img src="https://1000logos.net/wp-content/uploads/2020/02/Plantronics-Logo.jpg" alt="Plantronics Logo" class="brand-logo">
+          <img src="https://purepng.com/public/uploads/large/purepng.com-microsoft-logologobrand-logoiconslogos-251519939132du80p.png" alt="Microsoft Logo" class="brand-logo">
+          <img src="https://cdn.freebiesupply.com/images/large/2x/cisco-logo-transparent.png" alt="Cisco Logo" class="brand-logo">
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-title">¿Necesitas equipar tu empresa?</h2>
+      <p class="cta-text">Contáctanos hoy mismo y recibe asesoría especializada para elegir los mejores productos tecnológicos para tu negocio.</p>
+      <button class="hero-btn" onclick="scrollToContact()">Solicitar Cotización</button>
     </div>
   </section>
 
   <!-- Contact Form Section -->
-  <section class="contact-section">
+  <section class="contact-section" id="contacto">
     <div class="container">
       <div class="contact-form">
         <h3 class="form-title">Contáctenos</h3>
         <form id="contactForm" action="https://formspree.io/f/carla.chour@promotorsgt.com" method="POST">
-          <div class="mb-3">
-            <label for="nombre" class="form-label required-field">Nombre</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" required>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="nombre" class="form-label required-field">Nombre completo</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="empresa" class="form-label required-field">Empresa</label>
+                <input type="text" class="form-control" id="empresa" name="empresa" required>
+              </div>
+            </div>
           </div>
-          <div class="mb-3">
-            <label for="empresa" class="form-label required-field">Empresa</label>
-            <input type="text" class="form-control" id="empresa" name="empresa" required>
+          
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="telefono" class="form-label required-field">Teléfono</label>
+                <input type="tel" class="form-control" id="telefono" name="telefono" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="email" class="form-label required-field">Correo electrónico</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+              </div>
+            </div>
           </div>
+          
           <div class="mb-3">
-            <label for="telefono" class="form-label required-field">Teléfono</label>
-            <input type="tel" class="form-control" id="telefono" name="telefono" required>
+            <label for="interes" class="form-label">Producto de interés</label>
+            <select class="form-control" id="interes" name="interes">
+              <option value="">Seleccionar producto</option>
+              <option value="laptops">Laptops Empresariales</option>
+              <option value="workstations">Workstations</option>
+              <option value="software">Software y Licencias</option>
+              <option value="almacenamiento">Almacenamiento</option>
+              <option value="accesorios">Accesorios</option>
+              <option value="otros">Otros</option>
+            </select>
           </div>
-          <div class="mb-3">
-            <label for="email" class="form-label required-field">Correo electrónico</label>
-            <input type="email" class="form-control" id="email" name="email" required>
-          </div>
+          
           <div class="mb-3">
             <label for="mensaje" class="form-label">Mensaje</label>
-            <textarea class="form-control" id="mensaje" name="mensaje" rows="4"></textarea>
+            <textarea class="form-control" id="mensaje" name="mensaje" rows="4" placeholder="Describe tus necesidades específicas..."></textarea>
           </div>
+          
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="newsletter" name="newsletter">
+            <label class="form-check-label" for="newsletter">Deseo recibir información sobre nuevos productos y promociones</label>
+          </div>
+          
           <button type="submit" class="submit-btn">Enviar Mensaje</button>
         </form>
       </div>
@@ -372,29 +773,108 @@
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Nodox Guatemala | <a href="#">Aviso Legal</a></p>
+    <div class="container">
+      <div class="row footer-links">
+        <div class="col-md-4">
+          <h5>Nodox Guatemala</h5>
+          <p>Proveedor líder de soluciones tecnológicas para empresas en Guatemala.</p>
+          <div class="social-links">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <h5>Productos</h5>
+          <ul>
+            <li><a href="#">Hardware</a></li>
+            <li><a href="#">Software</a></li>
+            <li><a href="#">Accesorios</a></li>
+            <li><a href="#">Servicios</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h5>Empresa</h5>
+          <ul>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Marcas</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Trabaja con nosotros</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Contacto</h5>
+          <ul>
+            <li><i class="bi bi-geo-alt"></i> Ciudad de Guatemala, Guatemala</li>
+            <li><i class="bi bi-telephone"></i> +502 1234 5678</li>
+            <li><i class="bi bi-envelope"></i> info@nodoxgt.com</li>
+            <li><i class="bi bi-clock"></i> Lun-Vie: 8:00 - 17:00</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>© 2025 Nodox Guatemala | <a href="#">Aviso Legal</a> | <a href="#">Política de Privacidad</a></p>
+      </div>
+    </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
+    // Función para desplazarse al formulario de contacto
+    function scrollToContact() {
+      document.getElementById('contacto').scrollIntoView({ 
+        behavior: 'smooth' 
+      });
+    }
+    
+    // Filtrado de productos
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('.product-tab');
+      const items = document.querySelectorAll('.product-item');
       
-      // Validate form
-      const nombre = document.getElementById('nombre').value;
-      const empresa = document.getElementById('empresa').value;
-      const telefono = document.getElementById('telefono').value;
-      const email = document.getElementById('email').value;
+      tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          // Remover clase active de todos los tabs
+          tabs.forEach(t => t.classList.remove('active'));
+          
+          // Agregar clase active al tab clickeado
+          this.classList.add('active');
+          
+          // Obtener el filtro
+          const filter = this.getAttribute('data-filter');
+          
+          // Mostrar/ocultar productos según el filtro
+          items.forEach(item => {
+            if (filter === 'all' || item.getAttribute('data-category') === filter) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
       
-      if (!nombre || !empresa || !telefono || !email) {
-        alert('Por favor complete todos los campos obligatorios');
-        return;
-      }
-      
-      // If validation passes, submit the form
-      this.submit();
-      alert('Gracias por su mensaje. Nos pondremos en contacto pronto.');
-      this.reset();
+      // Validación del formulario
+      document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Validate form
+        const nombre = document.getElementById('nombre').value;
+        const empresa = document.getElementById('empresa').value;
+        const telefono = document.getElementById('telefono').value;
+        const email = document.getElementById('email').value;
+        
+        if (!nombre || !empresa || !telefono || !email) {
+          alert('Por favor complete todos los campos obligatorios');
+          return;
+        }
+        
+        // If validation passes, submit the form
+        this.submit();
+        alert('Gracias por su mensaje. Nos pondremos en contacto pronto.');
+        this.reset();
+      });
     });
   </script>
 </body>
