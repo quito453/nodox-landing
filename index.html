@@ -5,6 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nodox Guatemala - Soluciones Corporativas en Hardware y Software</title>
   <meta name="description" content="Proveedor líder de hardware y software corporativo en Guatemala. Soluciones tecnológicas con entrega en 24 horas.">
+  <meta property="og:title" content="Nodox Guatemala - Soluciones Corporativas en Hardware y Software">
+  <meta property="og:description" content="Proveedor líder de hardware y software corporativo en Guatemala. Soluciones tecnológicas con entrega en 24 horas.">
+  <meta property="og:image" content="https://images.pexels.com/photos/13073600/pexels-photo-13073600.jpeg">
+  <meta property="og:url" content="https://nodoxguatemala.com">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nodox Guatemala - Soluciones Corporativas">
+  <meta name="twitter:description" content="Proveedor líder de hardware y software corporativo">
+  
+  <!-- Schema.org markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Nodox Guatemala",
+    "image": "https://images.pexels.com/photos/13073600/pexels-photo-13073600.jpeg",
+    "telephone": "+502 4591 7700",
+    "email": "carla.chour@promotorsgt.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Ciudad de Guatemala",
+      "addressCountry": "GT"
+    },
+    "openingHours": "Mo-Fr 08:00-17:00",
+    "priceRange": "$$",
+    "url": "https://nodoxguatemala.com"
+  }
+  </script>
+  
   <link rel="icon" href="icon.ico" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
@@ -136,10 +165,49 @@
       margin-bottom: 20px;
     }
 
+    /* Services Section */
+    .services-section {
+      padding: 80px 0;
+      background-color: var(--gris-claro);
+    }
+    
+    .services-section h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      color: var(--primario);
+      font-weight: 700;
+    }
+    
+    .service-card {
+      text-align: center;
+      padding: 30px 20px;
+      background: var(--blanco);
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    
+    .service-card i {
+      font-size: 2.5rem;
+      color: var(--primario);
+      margin-bottom: 20px;
+    }
+    
+    .service-card h4 {
+      margin-bottom: 15px;
+      color: var(--primario);
+    }
+
     /* Products Section */
     .products-section {
       padding: 80px 0;
-      background-color: var(--gris-claro);
+      background-color: var(--blanco);
     }
     
     .product-tabs {
@@ -182,6 +250,7 @@
     .product-img {
       height: 200px;
       object-fit: cover;
+      width: 100%;
     }
     
     .product-card .card-body {
@@ -197,7 +266,7 @@
     /* Testimonials Section */
     .testimonials-section {
       padding: 80px 0;
-      background-color: var(--blanco);
+      background-color: var(--gris-claro);
     }
     
     .testimonial-card {
@@ -206,6 +275,7 @@
       box-shadow: 0px 5px 15px rgba(0,0,0,0.08);
       margin: 15px;
       height: 100%;
+      background: var(--blanco);
     }
     
     .testimonial-text {
@@ -226,7 +296,7 @@
     /* Brands Carousel */
     .brands-section {
       padding: 60px 0;
-      background-color: var(--gris-claro);
+      background-color: var(--blanco);
     }
     
     .brands-title {
@@ -245,7 +315,7 @@
     .brands-track {
       display: flex;
       animation: scroll 30s linear infinite;
-      width: calc(250px * 14); /* Adjust based on number of logos */
+      width: calc(250px * 14);
     }
     
     .brand-logo {
@@ -268,8 +338,61 @@
         transform: translateX(0);
       }
       100% {
-        transform: translateX(calc(-250px * 7)); /* Half of total width */
+        transform: translateX(calc(-250px * 7));
       }
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      padding: 80px 0;
+      background-color: var(--gris-claro);
+    }
+    
+    .faq-section h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      color: var(--primario);
+      font-weight: 700;
+    }
+    
+    .faq-item {
+      margin-bottom: 20px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    .faq-question {
+      background: var(--blanco);
+      padding: 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      color: var(--primario);
+    }
+    
+    .faq-question i {
+      transition: transform 0.3s ease;
+    }
+    
+    .faq-answer {
+      background: var(--blanco);
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+      padding: 20px;
+      border-top: 1px solid var(--gris-claro);
+    }
+    
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
     }
 
     /* CTA Section */
@@ -424,6 +547,96 @@
       font-size: 0.9rem;
     }
     
+    .copyright a {
+      color: var(--secundario);
+      text-decoration: none;
+    }
+    
+    /* Breadcrumb */
+    .breadcrumb {
+      background-color: transparent;
+      padding: 15px 0;
+      margin-bottom: 0;
+    }
+    
+    .breadcrumb-item a {
+      color: var(--primario);
+      text-decoration: none;
+    }
+    
+    .breadcrumb-item.active {
+      color: var(--secundario);
+    }
+    
+    /* WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 30px;
+      line-height: 60px;
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .whatsapp-float:hover {
+      background-color: #128C7E;
+      transform: scale(1.1);
+      color: white;
+    }
+    
+    /* Cotización flotante */
+    .quote-badge {
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      background-color: var(--primario);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 999;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+    }
+    
+    .quote-badge:hover {
+      background-color: var(--secundario);
+      color: var(--oscuro);
+    }
+    
+    .quote-badge i {
+      margin-right: 8px;
+    }
+    
+    /* Cart items counter */
+    .cart-counter {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background-color: var(--secundario);
+      color: var(--oscuro);
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+    
     /* Responsive adjustments */
     @media (max-width: 768px) {
       .hero h1 {
@@ -437,6 +650,43 @@
       .hero-btn {
         padding: 12px 30px;
         font-size: 1.2rem;
+      }
+      
+      .brands-track {
+        animation-duration: 20s;
+      }
+      
+      .quote-badge {
+        bottom: 80px;
+        right: 15px;
+        font-size: 0.9rem;
+        padding: 8px 15px;
+      }
+      
+      .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+        line-height: 50px;
+      }
+      
+      .contact-form {
+        padding: 20px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .product-tabs {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .product-tab {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5px;
       }
     }
   </style>
@@ -455,12 +705,24 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
           <li class="nav-item"><a class="nav-link" href="#marcas">Marcas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
           <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
         </ul>
       </div>
     </div>
   </nav>
+
+  <!-- Breadcrumb -->
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#inicio">Inicio</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Productos y Servicios</li>
+      </ol>
+    </nav>
+  </div>
 
   <!-- Hero Section -->
   <section class="hero" id="inicio">
@@ -513,6 +775,36 @@
     </div>
   </section>
 
+  <!-- Services Section -->
+  <section class="services-section" id="servicios">
+    <div class="container">
+      <h2>Servicios Adicionales</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="service-card">
+            <i class="bi bi-laptop"></i>
+            <h4>Implementación IT</h4>
+            <p>Instalación y configuración de infraestructura tecnológica completa para tu empresa.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="service-card">
+            <i class="bi bi-shield-lock"></i>
+            <h4>Ciberseguridad</h4>
+            <p>Auditoría e implementación de soluciones de seguridad para proteger tus datos.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="service-card">
+            <i class="bi bi-cloud-arrow-up"></i>
+            <h4>Migración a la Nube</h4>
+            <p>Asesoría especializada para transición segura a servicios cloud.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Products Section -->
   <section class="products-section" id="productos">
     <div class="container">
@@ -541,13 +833,13 @@
       <div class="row g-4 products-container">
         <div class="col-md-4 product-item" data-category="hardware">
           <div class="product-card">
-            <img src="https://images.pexels.com/photos/705675/pexels-photo-705675.jpeg" class="card-img-top product-img" alt="Laptop empresarial">
+            <img src="https://images.pexels.com/photos/705675/pexels-photo-705675.jpeg" class="card-img-top product-img" alt="Laptop empresarial" loading="lazy">
             <div class="card-body">
               <h5 class="card-title">Laptops Empresariales</h5>
-              <p class="card-text">Equipos de alto rendimiento para profesionales.</p>
+              <p class="card-text">Equipos de alto rendimiento para profesionales, con procesadores Intel Core i7/i9 y hasta 32GB RAM.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <span class="product-price">Desde Q7,500</span>
-                <button class="btn btn-primary" onclick="scrollToContact()">Cotizar</button>
+                <button class="btn btn-primary add-to-quote" data-product="Laptops Empresariales">Cotizar</button>
               </div>
             </div>
           </div>
@@ -555,13 +847,13 @@
         
         <div class="col-md-4 product-item" data-category="hardware">
           <div class="product-card">
-            <img src="https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg" class="card-img-top product-img" alt="Workstation">
+            <img src="https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg" class="card-img-top product-img" alt="Workstation" loading="lazy">
             <div class="card-body">
               <h5 class="card-title">Workstations</h5>
-              <p class="card-text">Estaciones de trabajo para diseño y desarrollo.</p>
+              <p class="card-text">Estaciones de trabajo para diseño y desarrollo, con tarjetas gráficas profesionales NVIDIA RTX.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <span class="product-price">Desde Q12,000</span>
-                <button class="btn btn-primary" onclick="scrollToContact()">Cotizar</button>
+                <button class="btn btn-primary add-to-quote" data-product="Workstations">Cotizar</button>
               </div>
             </div>
           </div>
@@ -569,13 +861,13 @@
         
         <div class="col-md-4 product-item" data-category="software">
           <div class="product-card">
-            <img src="https://images.pexels.com/photos/3949101/pexels-photo-3949101.jpeg" class="card-img-top product-img" alt="Software de oficina">
+            <img src="https://images.pexels.com/photos/3949101/pexels-photo-3949101.jpeg" class="card-img-top product-img" alt="Software de oficina" loading="lazy">
             <div class="card-body">
               <h5 class="card-title">Suites de Oficina</h5>
-              <p class="card-text">Licencias Microsoft Office para toda tu empresa.</p>
+              <p class="card-text">Licencias Microsoft Office 365 para toda tu empresa, incluye actualizaciones y soporte técnico.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <span class="product-price">Desde Q850/user</span>
-                <button class="btn btn-primary" onclick="scrollToContact()">Cotizar</button>
+                <button class="btn btn-primary add-to-quote" data-product="Suites de Oficina">Cotizar</button>
               </div>
             </div>
           </div>
@@ -583,13 +875,13 @@
         
         <div class="col-md-4 product-item" data-category="software">
           <div class="product-card">
-            <img src="https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg" class="card-img-top product-img" alt="Software de seguridad">
+            <img src="https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg" class="card-img-top product-img" alt="Software de seguridad" loading="lazy">
             <div class="card-body">
               <h5 class="card-title">Software de Seguridad</h5>
-              <p class="card-text">Soluciones antivirus y protección para endpoints.</p>
+              <p class="card-text">Soluciones antivirus empresariales y protección avanzada para endpoints y servidores.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <span class="product-price">Desde Q450/user</span>
-                <button class="btn btn-primary" onclick="scrollToContact()">Cotizar</button>
+                <button class="btn btn-primary add-to-quote" data-product="Software de Seguridad">Cotizar</button>
               </div>
             </div>
           </div>
@@ -597,13 +889,13 @@
         
         <div class="col-md-4 product-item" data-category="accesorios">
           <div class="product-card">
-            <img src="https://images.pexels.com/photos/2115256/pexels-photo-2115256.jpeg" class="card-img-top product-img" alt="Monitor profesional">
+            <img src="https://images.pexels.com/photos/2115256/pexels-photo-2115256.jpeg" class="card-img-top product-img" alt="Monitor profesional" loading="lazy">
             <div class="card-body">
               <h5 class="card-title">Monitores Profesionales</h5>
-              <p class="card-text">Pantallas de alta resolución para trabajo especializado.</p>
+              <p class="card-text">Pantallas 4K de alta resolución para trabajo especializado en diseño y desarrollo.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <span class="product-price">Desde Q2,200</span>
-                <button class="btn btn-primary" onclick="scrollToContact()">Cotizar</button>
+                <button class="btn btn-primary add-to-quote" data-product="Monitores Profesionales">Cotizar</button>
               </div>
             </div>
           </div>
@@ -611,13 +903,13 @@
         
         <div class="col-md-4 product-item" data-category="accesorios">
           <div class="product-card">
-            <img src="https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg" class="card-img-top product-img" alt="Disco duro">
+            <img src="https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg" class="card-img-top product-img" alt="Disco duro" loading="lazy">
             <div class="card-body">
               <h5 class="card-title">Almacenamiento NAS</h5>
-              <p class="card-text">Sistemas de almacenamiento en red para empresas.</p>
+              <p class="card-text">Sistemas de almacenamiento en red para empresas, con RAID y copias de seguridad automáticas.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <span class="product-price">Desde Q3,800</span>
-                <button class="btn btn-primary" onclick="scrollToContact()">Cotizar</button>
+                <button class="btn btn-primary add-to-quote" data-product="Almacenamiento NAS">Cotizar</button>
               </div>
             </div>
           </div>
@@ -677,21 +969,81 @@
       <div class="brands-carousel">
         <div class="brands-track">
           <!-- Duplicate logos to create infinite loop effect -->
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/HP_logo_2008.svg" alt="HP Logo" class="brand-logo">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Lenovo_Global_Corporate_Logo.png" alt="Lenovo Logo" class="brand-logo">
-          <img src="https://cdn.freebiesupply.com/images/large/2x/dell-logo-transparent.png" alt="Dell Logo" class="brand-logo">
-          <img src="https://cdn.freebiesupply.com/logos/large/2x/jbl-2-logo-svg-vector.svg" alt="JBL Logo" class="brand-logo">
-          <img src="https://1000logos.net/wp-content/uploads/2020/02/Plantronics-Logo.jpg" alt="Plantronics Logo" class="brand-logo">
-          <img src="https://purepng.com/public/uploads/large/purepng.com-microsoft-logologobrand-logoiconslogos-251519939132du80p.png" alt="Microsoft Logo" class="brand-logo">
-          <img src="https://cdn.freebiesupply.com/images/large/2x/cisco-logo-transparent.png" alt="Cisco Logo" class="brand-logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/HP_logo_2008.svg" alt="HP Logo" class="brand-logo" loading="lazy">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Lenovo_Global_Corporate_Logo.png" alt="Lenovo Logo" class="brand-logo" loading="lazy">
+          <img src="https://cdn.freebiesupply.com/images/large/2x/dell-logo-transparent.png" alt="Dell Logo" class="brand-logo" loading="lazy">
+          <img src="https://cdn.freebiesupply.com/logos/large/2x/jbl-2-logo-svg-vector.svg" alt="JBL Logo" class="brand-logo" loading="lazy">
+          <img src="https://1000logos.net/wp-content/uploads/2020/02/Plantronics-Logo.jpg" alt="Plantronics Logo" class="brand-logo" loading="lazy">
+          <img src="https://purepng.com/public/uploads/large/purepng.com-microsoft-logologobrand-logoiconslogos-251519939132du80p.png" alt="Microsoft Logo" class="brand-logo" loading="lazy">
+          <img src="https://cdn.freebiesupply.com/images/large/2x/cisco-logo-transparent.png" alt="Cisco Logo" class="brand-logo" loading="lazy">
           <!-- Duplicates -->
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/HP_logo_2008.svg" alt="HP Logo" class="brand-logo">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Lenovo_Global_Corporate_Logo.png" alt="Lenovo Logo" class="brand-logo">
-          <img src="https://cdn.freebiesupply.com/images/large/2x/dell-logo-transparent.png" alt="Dell Logo" class="brand-logo">
-          <img src="https://cdn.freebiesupply.com/logos/large/2x/jbl-2-logo-svg-vector.svg" alt="JBL Logo" class="brand-logo">
-          <img src="https://1000logos.net/wp-content/uploads/2020/02/Plantronics-Logo.jpg" alt="Plantronics Logo" class="brand-logo">
-          <img src="https://purepng.com/public/uploads/large/purepng.com-microsoft-logologobrand-logoiconslogos-251519939132du80p.png" alt="Microsoft Logo" class="brand-logo">
-          <img src="https://cdn.freebiesupply.com/images/large/2x/cisco-logo-transparent.png" alt="Cisco Logo" class="brand-logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/HP_logo_2008.svg" alt="HP Logo" class="brand-logo" loading="lazy">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Lenovo_Global_Corporate_Logo.png" alt="Lenovo Logo" class="brand-logo" loading="lazy">
+          <img src="https://cdn.freebiesupply.com/images/large/2x/dell-logo-transparent.png" alt="Dell Logo" class="brand-logo" loading="lazy">
+          <img src="https://cdn.freebiesupply.com/logos/large/2x/jbl-2-logo-svg-vector.svg" alt="JBL Logo" class="brand-logo" loading="lazy">
+          <img src="https://1000logos.net/wp-content/uploads/2020/02/Plantronics-Logo.jpg" alt="Plantronics Logo" class="brand-logo" loading="lazy">
+          <img src="https://purepng.com/public/uploads/large/purepng.com-microsoft-logologobrand-logoiconslogos-251519939132du80p.png" alt="Microsoft Logo" class="brand-logo" loading="lazy">
+          <img src="https://cdn.freebiesupply.com/images/large/2x/cisco-logo-transparent.png" alt="Cisco Logo" class="brand-logo" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <h2>Preguntas Frecuentes</h2>
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>¿Cuál es el tiempo de entrega de los productos?</span>
+              <i class="bi bi-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Entregamos en 24 horas en la Ciudad de Guatemala y área metropolitana. Para el interior del país, el tiempo de entrega es de 72 horas hábiles.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>¿Ofrecen garantía en los productos?</span>
+              <i class="bi bi-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Todos nuestros productos cuentan con garantía oficial del fabricante. El tiempo de garantía varía según el producto, generalmente de 1 a 3 años.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>¿Pueden facturar con NIT de mi empresa?</span>
+              <i class="bi bi-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Sí, emitimos facturas con NIT para todas las empresas. Solo necesitamos los datos fiscales completos de su empresa.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>¿Ofrecen servicio de instalación y configuración?</span>
+              <i class="bi bi-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Sí, ofrecemos servicios de implementación IT que incluyen instalación, configuración y puesta en marcha de todos los equipos y software.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>¿Tienen precios especiales para compras corporativas?</span>
+              <i class="bi bi-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Sí, ofrecemos descuentos especiales para compras corporativas y pedidos de volumen. Contáctenos para una cotización personalizada.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -751,6 +1103,7 @@
               <option value="software">Software y Licencias</option>
               <option value="almacenamiento">Almacenamiento</option>
               <option value="accesorios">Accesorios</option>
+              <option value="servicios">Servicios IT</option>
               <option value="otros">Otros</option>
             </select>
           </div>
@@ -779,28 +1132,28 @@
           <h5>Nodox Guatemala</h5>
           <p>Proveedor líder de soluciones tecnológicas para empresas en Guatemala.</p>
           <div class="social-links">
-            <a href="#"><i class="bi bi-facebook"></i></a>
-            <a href="#"><i class="bi bi-twitter"></i></a>
-            <a href="#"><i class="bi bi-linkedin"></i></a>
-            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
           </div>
         </div>
         <div class="col-md-2">
           <h5>Productos</h5>
           <ul>
-            <li><a href="#">Hardware</a></li>
-            <li><a href="#">Software</a></li>
-            <li><a href="#">Accesorios</a></li>
-            <li><a href="#">Servicios</a></li>
+            <li><a href="#productos">Hardware</a></li>
+            <li><a href="#productos">Software</a></li>
+            <li><a href="#productos">Accesorios</a></li>
+            <li><a href="#servicios">Servicios</a></li>
           </ul>
         </div>
         <div class="col-md-2">
           <h5>Empresa</h5>
           <ul>
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Marcas</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Trabaja con nosotros</a></li>
+            <li><a href="#inicio">Nosotros</a></li>
+            <li><a href="#marcas">Marcas</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contacto">Trabaja con nosotros</a></li>
           </ul>
         </div>
         <div class="col-md-4">
@@ -818,6 +1171,20 @@
       </div>
     </div>
   </footer>
+
+  <!-- Floating Elements -->
+  <div class="quote-badge" onclick="scrollToContact()">
+    <i class="bi bi-cart"></i>
+    <span>Cotización</span>
+    <div class="cart-counter" id="cartCounter">0</div>
+  </div>
+
+  <a href="https://wa.me/50245917700?text=Hola%20Nodox,%20me%20interesan%20sus%20productos" 
+     class="whatsapp-float" 
+     target="_blank"
+     aria-label="Contáctanos por WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <script>
@@ -855,27 +1222,231 @@
         });
       });
       
-      // Validación del formulario
+      // FAQ Accordion
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', function() {
+          // Close all other items
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item && otherItem.classList.contains('active')) {
+              otherItem.classList.remove('active');
+            }
+          });
+          
+          // Toggle current item
+          item.classList.toggle('active');
+        });
+      });
+      
+      // Carrusel infinito mejorado
+      const brandsTrack = document.querySelector('.brands-track');
+      if (brandsTrack) {
+        // Clonar logos para efecto infinito más fluido
+        brandsTrack.innerHTML += brandsTrack.innerHTML;
+        
+        // Pausar animación al hover
+        brandsTrack.addEventListener('mouseenter', () => {
+          brandsTrack.style.animationPlayState = 'paused';
+        });
+        
+        brandsTrack.addEventListener('mouseleave', () => {
+          brandsTrack.style.animationPlayState = 'running';
+        });
+      }
+      
+      // Sistema de cotización
+      const cartCounter = document.getElementById('cartCounter');
+      let quoteItems = JSON.parse(localStorage.getItem('nodoxQuoteItems')) || [];
+      updateCartCounter();
+      
+      // Botones de agregar a cotización
+      document.querySelectorAll('.add-to-quote').forEach(button => {
+        button.addEventListener('click', function() {
+          const product = this.getAttribute('data-product');
+          
+          // Agregar producto a la cotización
+          quoteItems.push({
+            product: product,
+            timestamp: new Date().toISOString()
+          });
+          
+          // Guardar en localStorage
+          localStorage.setItem('nodoxQuoteItems', JSON.stringify(quoteItems));
+          
+          // Actualizar contador
+          updateCartCounter();
+          
+          // Mostrar confirmación
+          showNotification(`"${product}" agregado a cotización`);
+        });
+      });
+      
+      // Botón de cotización flotante
+      document.querySelector('.quote-badge').addEventListener('click', function() {
+        if (quoteItems.length > 0) {
+          // Prellenar el formulario con los productos seleccionados
+          const productList = [...new Set(quoteItems.map(item => item.product))].join(', ');
+          document.getElementById('mensaje').value = `Productos de interés: ${productList}\n\n`;
+          scrollToContact();
+        } else {
+          scrollToContact();
+        }
+      });
+      
+      function updateCartCounter() {
+        cartCounter.textContent = quoteItems.length;
+        cartCounter.style.display = quoteItems.length > 0 ? 'flex' : 'none';
+      }
+      
+      function showNotification(message) {
+        // Crear notificación
+        const notification = document.createElement('div');
+        notification.style.cssText = `
+          position: fixed;
+          top: 100px;
+          right: 30px;
+          background: var(--primario);
+          color: white;
+          padding: 15px 25px;
+          border-radius: 8px;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+          z-index: 10000;
+          animation: slideIn 0.3s ease;
+        `;
+        notification.textContent = message;
+        document.body.appendChild(notification);
+        
+        // Remover después de 3 segundos
+        setTimeout(() => {
+          notification.style.animation = 'slideOut 0.3s ease';
+          setTimeout(() => notification.remove(), 300);
+        }, 3000);
+      }
+      
+      // Añadir estilos de animación para notificaciones
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes slideIn {
+          from {
+            transform: translateX(100%);
+            opacity: 0;
+          }
+          to {
+            transform: translateX(0);
+            opacity: 1;
+          }
+        }
+        @keyframes slideOut {
+          from {
+            transform: translateX(0);
+            opacity: 1;
+          }
+          to {
+            transform: translateX(100%);
+            opacity: 0;
+          }
+        }
+      `;
+      document.head.appendChild(style);
+      
+      // Lazy loading para imágenes
+      const images = document.querySelectorAll('img[loading="lazy"]');
+      
+      if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.dataset.src;
+              imageObserver.unobserve(img);
+            }
+          });
+        });
+        
+        images.forEach(img => imageObserver.observe(img));
+      }
+      
+      // Validación del formulario mejorada
       document.getElementById('contactForm').addEventListener('submit', function(e) {
         e.preventDefault();
         
         // Validate form
-        const nombre = document.getElementById('nombre').value;
-        const empresa = document.getElementById('empresa').value;
-        const telefono = document.getElementById('telefono').value;
-        const email = document.getElementById('email').value;
+        const nombre = document.getElementById('nombre').value.trim();
+        const empresa = document.getElementById('empresa').value.trim();
+        const telefono = document.getElementById('telefono').value.trim();
+        const email = document.getElementById('email').value.trim();
         
         if (!nombre || !empresa || !telefono || !email) {
-          alert('Por favor complete todos los campos obligatorios');
+          showNotification('Por favor complete todos los campos obligatorios');
           return;
+        }
+        
+        // Validar email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          showNotification('Por favor ingrese un correo electrónico válido');
+          return;
+        }
+        
+        // Agregar productos de cotización al mensaje si existen
+        if (quoteItems.length > 0) {
+          const productList = [...new Set(quoteItems.map(item => item.product))];
+          const currentMessage = document.getElementById('mensaje').value;
+          const productsText = `\n\nProductos en cotización: ${productList.join(', ')}`;
+          document.getElementById('mensaje').value = currentMessage + productsText;
+          
+          // Limpiar cotización después de enviar
+          localStorage.removeItem('nodoxQuoteItems');
+          quoteItems = [];
+          updateCartCounter();
+        }
+        
+        // Enviar datos a Google Analytics si está configurado
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'form_submit', {
+            'event_category': 'contact',
+            'event_label': 'contact_form'
+          });
         }
         
         // If validation passes, submit the form
         this.submit();
-        alert('Gracias por su mensaje. Nos pondremos en contacto pronto.');
+        showNotification('Gracias por su mensaje. Nos pondremos en contacto pronto.');
         this.reset();
       });
+      
+      // Mejorar la accesibilidad del teclado
+      document.querySelectorAll('button, a, input, select, textarea').forEach(element => {
+        element.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' && this.tagName === 'A') {
+            this.click();
+          }
+        });
+      });
+      
+      // Smooth scroll para enlaces internos
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href !== '#') {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+              target.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        });
+      });
     });
+    
+    // Google Analytics (reemplazar GA_MEASUREMENT_ID con el ID real)
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
   </script>
 </body>
 </html>
