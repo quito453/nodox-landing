@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Nodox Guatemala - Productos Tecnológicos</title>
+<title>Nodox Guatemala - Tecnología de Vanguardia</title>
 <link rel="icon" href="icon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-<meta name="description" content="Nodox Guatemala - Productos tecnológicos, electrónicos y accesorios de calidad" />
+<meta name="description" content="Nodox Guatemala - Productos tecnológicos, electrónicos y accesorios de calidad con garantía y envío rápido" />
 <style>
 /* Paleta Nodox */
 :root {
@@ -524,6 +524,655 @@ header {
   color: var(--primario);
 }
 
+/* Botones generales */
+.btn {
+  background: var(--secundario);
+  color: var(--primario);
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 15px;
+}
+
+.btn:hover {
+  background: #ffc233;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(255, 177, 0, 0.25);
+}
+
+.btn i {
+  font-size: 14px;
+}
+
+.small {
+  font-size: 14px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+/* Hero section */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 30px;
+  align-items: center;
+  padding: 60px 0;
+  background: linear-gradient(135deg, var(--primario) 0%, #003366 100%);
+  color: var(--blanco);
+  border-radius: 0 0 20px 20px;
+  margin-bottom: 40px;
+}
+
+.hero-card {
+  background: rgba(255, 255, 255, 0.98);
+  padding: 35px;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  color: var(--oscuro);
+}
+
+.hero h1 {
+  margin: 0 0 15px;
+  font-size: 36px;
+  color: var(--primario);
+  line-height: 1.2;
+}
+
+.hero p {
+  margin: 0 0 25px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.hero .cta {
+  display: inline-block;
+  font-size: 16px;
+  padding: 14px 28px;
+  background: var(--primario);
+  color: var(--blanco);
+}
+
+.hero .cta:hover {
+  background: var(--secundario);
+  color: var(--primario);
+}
+
+/* Slider en hero-visual */
+.hero-visual {
+  position: relative;
+  height: 350px;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 2px dashed rgba(255, 177, 0, 0.3);
+  background: linear-gradient(135deg, #f7f8ff, #eef6ff);
+}
+
+.hero-visual a.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.hero-visual a.slide.active {
+  opacity: 1;
+  position: relative;
+  pointer-events: auto;
+}
+
+.hero-visual a.slide img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.hero-visual a.slide:hover img {
+  transform: scale(1.03);
+}
+
+/* Categories */
+.cats {
+  display: flex;
+  gap: 12px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.cat {
+  background: var(--gris-claro);
+  padding: 10px 18px;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  font-weight: 600;
+  color: var(--primario);
+  transition: var(--transition);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.cat:hover {
+  border-color: var(--secundario);
+  background: rgba(255, 177, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Products grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.card {
+  background: var(--blanco);
+  border-radius: 12px;
+  padding: 18px;
+  border: 1px solid var(--gris-claro);
+  transition: var(--transition);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border-color: var(--secundario);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 16px;
+  margin: 10px 0 8px;
+  color: var(--primario);
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+.price {
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--secundario);
+  margin: 10px 0;
+}
+
+.old {
+  color: var(--muted);
+  text-decoration: line-through;
+  margin-left: 8px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.card .meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.add-to-cart {
+  background: var(--primario);
+  color: var(--blanco);
+  padding: 10px 18px;
+  border-radius: var(--border-radius);
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.add-to-cart:hover {
+  background: var(--secundario);
+  color: var(--primario);
+  transform: translateY(-2px);
+}
+
+/* Badges */
+.new-badge, .oferta-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: var(--blanco);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  z-index: 2;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.new-badge {
+  background: var(--acento);
+}
+
+.oferta-badge {
+  background: var(--secundario);
+  color: var(--primario);
+}
+
+.product-card-container {
+  position: relative;
+}
+
+/* Secciones */
+#ofertas-especiales, #ducky, #todos-productos {
+  margin: 60px 0;
+}
+
+#ofertas-especiales h2, #ducky h2, #todos-productos h2 {
+  color: var(--primario);
+  font-size: 28px;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid var(--secundario);
+  display: inline-block;
+}
+
+/* Newsletter */
+.newsletter {
+  background: linear-gradient(135deg, var(--primario) 0%, #003366 100%);
+  padding: 40px;
+  border-radius: 15px;
+  margin: 40px 0;
+  color: var(--blanco);
+  text-align: center;
+}
+
+.newsletter h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: var(--blanco);
+}
+
+.newsletter p {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 25px;
+  font-size: 16px;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 14px 18px;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 15px;
+}
+
+.newsletter-form button {
+  background: var(--secundario);
+  color: var(--primario);
+  border: none;
+  padding: 0 30px;
+  border-radius: var(--border-radius);
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.newsletter-form button:hover {
+  background: #ffc233;
+  transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+  margin-top: 80px;
+  padding: 50px 0 30px;
+  background: var(--primario);
+  color: var(--blanco);
+  border-top: 5px solid var(--secundario);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-section h4 {
+  color: var(--secundario);
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.footer-section a {
+  display: block;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: var(--transition);
+  font-size: 14px;
+}
+
+.footer-section a:hover {
+  color: var(--secundario);
+  transform: translateX(5px);
+}
+
+.footer-section a i {
+  width: 20px;
+  margin-right: 8px;
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}
+
+/* Overlay para el carrito */
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: none;
+}
+
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100%;
+  background: var(--blanco);
+  box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
+  z-index: 101;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.cart-sidebar.open {
+  transform: translateX(0);
+}
+
+.cart-sidebar-header {
+  padding: 20px;
+  border-bottom: 1px solid var(--gris-claro);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--primario);
+  color: var(--blanco);
+}
+
+.cart-sidebar-header h3 {
+  margin: 0;
+  color: var(--blanco);
+}
+
+.cart-sidebar-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--blanco);
+  transition: var(--transition);
+}
+
+.cart-sidebar-close:hover {
+  color: var(--secundario);
+}
+
+.cart-sidebar-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.cart-sidebar-footer {
+  padding: 20px;
+  border-top: 1px solid var(--gris-claro);
+  background: var(--gris-claro);
+}
+
+/* Estilos para el popup de login/registro */
+.auth-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-popup-content {
+  background: var(--blanco);
+  border-radius: 15px;
+  width: 100%;
+  max-width: 450px;
+  padding: 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  position: relative;
+  animation: popupFadeIn 0.3s ease;
+}
+
+.auth-popup-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--muted);
+  transition: var(--transition);
+}
+
+.auth-popup-close:hover {
+  color: var(--primario);
+}
+
+.auth-tabs {
+  display: flex;
+  margin-bottom: 25px;
+  border-bottom: 2px solid var(--gris-claro);
+}
+
+.auth-tab {
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--muted);
+  position: relative;
+  font-size: 16px;
+  transition: var(--transition);
+}
+
+.auth-tab.active {
+  color: var(--primario);
+}
+
+.auth-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--secundario);
+}
+
+.auth-form {
+  display: none;
+}
+
+.auth-form.active {
+  display: block;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border: 1px solid var(--gris-claro);
+  border-radius: var(--border-radius);
+  font-size: 15px;
+  transition: var(--transition);
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: var(--secundario);
+  box-shadow: 0 0 0 3px rgba(255, 177, 0, 0.1);
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 15px;
+  background: var(--secundario);
+  color: var(--primario);
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 16px;
+  transition: var(--transition);
+}
+
+.auth-form button:hover {
+  background: #ffc233;
+}
+
+.auth-form .form-footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.auth-form .form-footer a {
+  color: var(--primario);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-form .form-footer a:hover {
+  color: var(--secundario);
+  text-decoration: underline;
+}
+
+/* Notificaciones mejoradas */
+.notification {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--primario);
+  color: var(--blanco);
+  padding: 16px 22px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: var(--transition);
+  max-width: 350px;
+}
+
+.notification.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.notification.success {
+  background: #4CAF50;
+}
+
+.notification.error {
+  background: #F44336;
+}
+
+.notification i {
+  font-size: 22px;
+}
+
+/* Animaciones */
+@keyframes popupFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Loading spinner */
+.loading {
+  animation: fadeIn 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
   .header-content {
@@ -532,6 +1181,11 @@ header {
   
   .search-container {
     max-width: 400px;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
 }
 
@@ -582,6 +1236,44 @@ header {
   .btn-corporativo {
     padding: 10px;
   }
+  
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 40px 0;
+  }
+  
+  .hero-visual {
+    height: 280px;
+    order: -1;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .hero h1 {
+    font-size: 28px;
+  }
+  
+  .hero-card {
+    padding: 25px;
+  }
+  
+  .cart-dropdown {
+    min-width: 300px;
+  }
+  
+  .cart-sidebar {
+    width: 100%;
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+  }
+  
+  .newsletter-form button {
+    padding: 14px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -597,341 +1289,6 @@ header {
     min-width: 200px;
   }
   
-  .cart-dropdown {
-    min-width: 300px;
-  }
-}
-
-/* CONTENIDO PRINCIPAL (estilos existentes adaptados) */
-.btn {
-  background: var(--secundario);
-  color: var(--primario);
-  padding: 10px 18px;
-  border-radius: var(--border-radius);
-  text-decoration: none;
-  font-weight: 700;
-  border: none;
-  cursor: pointer;
-  transition: var(--transition);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-
-.btn:hover {
-  background: #ffc233;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 177, 0, 0.2);
-}
-
-.small {
-  font-size: 14px;
-  color: var(--muted);
-  text-decoration: none;
-}
-
-/* Hero section */
-.hero {
-  display: grid;
-  grid-template-columns: 1fr 420px;
-  gap: 30px;
-  align-items: center;
-  padding: 60px 0;
-  background: linear-gradient(135deg, var(--primario) 0%, #003366 100%);
-  color: var(--blanco);
-  border-radius: 0 0 20px 20px;
-  margin-bottom: 40px;
-}
-
-.hero-card {
-  background: rgba(255, 255, 255, 0.95);
-  padding: 35px;
-  border-radius: 15px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-  color: var(--oscuro);
-}
-
-.hero h1 {
-  margin: 0 0 15px;
-  font-size: 36px;
-  color: var(--primario);
-  line-height: 1.2;
-}
-
-.hero p {
-  margin: 0 0 25px;
-  color: var(--muted);
-  font-size: 16px;
-}
-
-.hero .cta {
-  display: inline-block;
-  font-size: 16px;
-  padding: 14px 28px;
-}
-
-/* Slider en hero-visual */
-.hero-visual {
-  position: relative;
-  height: 350px;
-  border-radius: 15px;
-  overflow: hidden;
-  border: 2px dashed rgba(255, 177, 0, 0.3);
-  background: linear-gradient(135deg, #f7f8ff, #eef6ff);
-}
-
-.hero-visual a.slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 1s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-}
-
-.hero-visual a.slide.active {
-  opacity: 1;
-  position: relative;
-  pointer-events: auto;
-}
-
-.hero-visual a.slide img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 12px;
-  object-fit: contain;
-}
-
-/* Categories */
-.cats {
-  display: flex;
-  gap: 12px;
-  margin: 20px 0;
-  flex-wrap: wrap;
-}
-
-.cat {
-  background: var(--gris-claro);
-  padding: 10px 18px;
-  border-radius: 50px;
-  border: 2px solid transparent;
-  font-weight: 600;
-  color: var(--primario);
-  transition: var(--transition);
-  text-decoration: none;
-}
-
-.cat:hover {
-  border-color: var(--secundario);
-  background: rgba(255, 177, 0, 0.1);
-}
-
-/* Products grid */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
-  margin: 30px 0;
-}
-
-.card {
-  background: var(--blanco);
-  border-radius: 12px;
-  padding: 15px;
-  border: 1px solid var(--gris-claro);
-  transition: var(--transition);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  position: relative;
-  overflow: hidden;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-  border-color: var(--secundario);
-}
-
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-
-.card h3 {
-  font-size: 16px;
-  margin: 10px 0 8px;
-  color: var(--primario);
-  line-height: 1.4;
-}
-
-.price {
-  font-weight: 800;
-  font-size: 20px;
-  color: var(--secundario);
-  margin: 10px 0;
-}
-
-.old {
-  color: var(--muted);
-  text-decoration: line-through;
-  margin-left: 8px;
-  font-weight: 500;
-  font-size: 14px;
-}
-
-.card .meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 15px;
-}
-
-.add-to-cart {
-  background: var(--primario);
-  color: var(--blanco);
-  padding: 10px 18px;
-  border-radius: var(--border-radius);
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
-  transition: var(--transition);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.add-to-cart:hover {
-  background: var(--secundario);
-  color: var(--primario);
-  transform: translateY(-2px);
-}
-
-/* Badges */
-.new-badge, .oferta-badge {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  color: var(--blanco);
-  padding: 6px 12px;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 700;
-  z-index: 2;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.new-badge {
-  background: var(--acento);
-}
-
-.oferta-badge {
-  background: var(--secundario);
-  color: var(--primario);
-}
-
-.product-card-container {
-  position: relative;
-}
-
-/* Secciones */
-#ofertas-especiales, #ducky, #todos-productos {
-  margin: 60px 0;
-}
-
-#ofertas-especiales h2, #ducky h2, #todos-productos h2 {
-  color: var(--primario);
-  font-size: 28px;
-  margin-bottom: 25px;
-  padding-bottom: 15px;
-  border-bottom: 3px solid var(--secundario);
-  display: inline-block;
-}
-
-/* Footer */
-footer {
-  margin-top: 80px;
-  padding: 50px 0 30px;
-  background: var(--primario);
-  color: var(--blanco);
-  border-top: 5px solid var(--secundario);
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
-  margin-bottom: 40px;
-}
-
-.footer-section h4 {
-  color: var(--secundario);
-  font-size: 18px;
-  margin-bottom: 20px;
-  font-weight: 700;
-}
-
-.footer-section a {
-  display: block;
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
-  margin-bottom: 10px;
-  transition: var(--transition);
-}
-
-.footer-section a:hover {
-  color: var(--secundario);
-  transform: translateX(5px);
-}
-
-.copyright {
-  text-align: center;
-  padding-top: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 14px;
-}
-
-/* Responsive para contenido */
-@media (max-width: 1000px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .hero {
-    grid-template-columns: 1fr;
-    padding: 40px 0;
-  }
-  
-  .hero-visual {
-    height: 280px;
-    order: -1;
-  }
-}
-
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .hero h1 {
-    font-size: 28px;
-  }
-  
-  .hero-card {
-    padding: 25px;
-  }
-}
-
-@media (max-width: 480px) {
   .grid {
     grid-template-columns: 1fr;
   }
@@ -939,11 +1296,11 @@ footer {
   .cats {
     justify-content: center;
   }
-}
-
-/* Estilos existentes para modales, notificaciones, etc. se mantienen igual... */
-.cart-overlay, .auth-popup, .notification {
-  /* Mantener estilos existentes pero adaptar colores */
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
 }
 </style>
 </head>
@@ -1062,15 +1419,15 @@ footer {
         <span>Todas las categorías</span>
       </button>
       <div class="categories-menu">
-        <a href="#ofertas-especiales" class="category-link active">Ofertas</a>
-        <a href="#ducky" class="category-link">Ducky</a>
-        <a href="#todos-productos" class="category-link">Todos</a>
-        <a href="#" class="category-link">Electrónica</a>
-        <a href="#" class="category-link">Computación</a>
-        <a href="#" class="category-link">Accesorios</a>
-        <a href="#" class="category-link">Hogar</a>
-        <a href="#" class="category-link">Oficina</a>
-        <a href="#" class="category-link">Gaming</a>
+        <a href="#ofertas-especiales" class="category-link active">🔥 Ofertas</a>
+        <a href="#ducky" class="category-link">⌨️ Ducky</a>
+        <a href="#todos-productos" class="category-link">🛒 Todos</a>
+        <a href="#" class="category-link">💻 Computación</a>
+        <a href="#" class="category-link">📱 Electrónica</a>
+        <a href="#" class="category-link">🎮 Gaming</a>
+        <a href="#" class="category-link">🎧 Audio</a>
+        <a href="#" class="category-link">🏠 Hogar Inteligente</a>
+        <a href="#" class="category-link">🖥️ Oficina</a>
       </div>
     </div>
   </nav>
@@ -1084,15 +1441,15 @@ footer {
       <a class="cat" href="#ofertas-especiales">🔥 Ofertas Flash</a>
       <a class="cat" href="#ducky">⌨️ Teclados Ducky</a>
       <a class="cat" href="#todos-productos">🆕 Nuevos</a>
-      <a class="cat" href="#">🎧 Audio</a>
+      <a class="cat" href="#">🎧 Audio Premium</a>
     </div>
     <h1>Tecnología de Vanguardia en Guatemala</h1>
-    <p>Descubre los mejores productos tecnológicos, electrónicos y accesorios con garantía y envío rápido a todo el país. Calidad verificada y precios transparentes.</p>
+    <p>Descubre los mejores productos tecnológicos, electrónicos y accesorios con garantía y envío rápido a todo el país. Calidad verificada y precios transparentes. Tu tienda de confianza para tecnología de última generación.</p>
     <a href="#ofertas-especiales" class="btn cta">
       <i class="fa fa-bolt"></i>Ver Ofertas Destacadas
     </a>
   </div>
-  <!-- Slider aquí -->
+  <!-- Slider -->
   <div class="hero-visual">
     <a href="https://link1.com" class="slide active" target="_blank" rel="noopener">
       <img src="segunda_imagen.png" alt="Producto Destacado 1" />
@@ -1101,31 +1458,30 @@ footer {
       <img src="primer_imagen.png" alt="Producto Destacado 2" />
     </a>
     <a href="https://link3.com" class="slide" target="_blank" rel="noopener">
-      <img src="https://via.placeholder.com/380x260.png/001a33/ffffff?text=Nodox+Tecnología" alt="Nodox Tecnología" />
+      <img src="https://via.placeholder.com/380x260.png/001a33/ffb100?text=Nodox+Tecnología" alt="Nodox Tecnología" />
     </a>
   </div>
 </section>
 
 <!-- Sección Ofertas Especiales -->
 <section id="ofertas-especiales">
-  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
     <h2>🔥 Ofertas Especiales</h2>
     <a href="productos.html" class="btn" style="font-size: 14px;">
       <i class="fa fa-arrow-right"></i>Ver todas las ofertas
     </a>
   </div>
   <div id="ofertas-container" class="grid">
-    <!-- Los productos con oferta se cargarán dinámicamente aquí -->
-    <div class="loading" style="grid-column: 1/-1; text-align: center; padding: 40px;">
-      <i class="fa fa-spinner fa-spin" style="font-size: 24px; color: var(--secundario);"></i>
-      <p style="color: var(--muted); margin-top: 10px;">Cargando ofertas especiales...</p>
+    <div class="loading" style="grid-column: 1/-1; text-align: center; padding: 60px 20px;">
+      <i class="fa fa-spinner fa-spin" style="font-size: 32px; color: var(--secundario); margin-bottom: 15px;"></i>
+      <p style="color: var(--muted); margin-top: 10px; font-size: 16px;">Cargando ofertas especiales...</p>
     </div>
   </div>
 </section>
 
 <!-- Distribuidor Autorizado Ducky -->
 <section id="ducky">
-  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
     <h2>⌨️ Distribuidor Autorizado Ducky</h2>
     <a href="#" class="btn" style="font-size: 14px;">
       <i class="fa fa-arrow-right"></i>Ver toda la colección
@@ -1136,10 +1492,10 @@ footer {
       <div class="product-card-container">
         <span class="oferta-badge">Oferta</span>
         <img src="https://ducky.global/cdn/shop/files/ducky_asset_dragon_product-2.jpg?v=1740390639" alt="Year of the Dragon 2024">
-        <h3>Year of the Dragon 2024</h3>
+        <h3>Teclado Ducky Year of the Dragon 2024</h3>
         <div class="price">Q229.00 <span class="old">Q399.00</span></div>
         <div class="meta">
-          <button class="btn add-to-cart" data-id="3" data-name="Year of the Dragon 2024" data-price="229.00" data-img="https://ducky.global/cdn/shop/files/ducky_asset_dragon_product-2.jpg?v=1740390639">
+          <button class="btn add-to-cart" data-id="3" data-name="Teclado Ducky Year of the Dragon 2024" data-price="229.00" data-img="https://ducky.global/cdn/shop/files/ducky_asset_dragon_product-2.jpg?v=1740390639">
             <i class="fa fa-cart-plus"></i>Agregar
           </button>
         </div>
@@ -1147,10 +1503,10 @@ footer {
     </article>
     <article class="card">
       <img src="https://ducky.global/cdn/shop/files/one3-SF-Doom_asset_product_1.jpg?v=1742540515" alt="DOOM® Edition One 3 SF">
-      <h3>DOOM® Edition One 3 SF</h3>
+      <h3>Teclado Ducky DOOM® Edition One 3 SF</h3>
       <div class="price">Q189.00</div>
       <div class="meta">
-        <button class="btn add-to-cart" data-id="4" data-name="DOOM® Edition One 3 SF" data-price="189.00" data-img="https://ducky.global/cdn/shop/files/one3-SF-Doom_asset_product_1.jpg?v=1742540515">
+        <button class="btn add-to-cart" data-id="4" data-name="Teclado Ducky DOOM® Edition One 3 SF" data-price="189.00" data-img="https://ducky.global/cdn/shop/files/one3-SF-Doom_asset_product_1.jpg?v=1742540515">
           <i class="fa fa-cart-plus"></i>Agregar
         </button>
       </div>
@@ -1159,10 +1515,10 @@ footer {
       <div class="product-card-container">
         <span class="new-badge">Nuevo</span>
         <img src="https://m.media-amazon.com/images/I/71lJSq9aeRL._AC_SX466_.jpg" alt="Ducky x MK Creator">
-        <h3>Ducky x MK Creator Purple 32-Key</h3>
+        <h3>Teclado Ducky x MK Creator Purple 32-Key</h3>
         <div class="price">Q50.00</div>
         <div class="meta">
-          <button class="btn add-to-cart" data-id="5" data-name="Ducky x MK Creator Purple 32-Key" data-price="50.00" data-img="https://m.media-amazon.com/images/I/71lJSq9aeRL._AC_SX466_.jpg">
+          <button class="btn add-to-cart" data-id="5" data-name="Teclado Ducky x MK Creator Purple 32-Key" data-price="50.00" data-img="https://m.media-amazon.com/images/I/71lJSq9aeRL._AC_SX466_.jpg">
             <i class="fa fa-cart-plus"></i>Agregar
           </button>
         </div>
@@ -1170,10 +1526,10 @@ footer {
     </article>
     <article class="card">
       <img src="https://m.media-amazon.com/images/I/714ftIVwLIL._AC_SX466_.jpg" alt="Ducky x Hardcap">
-      <h3>Ducky x Hardcap Afterglow 108 Key</h3>
+      <h3>Teclado Ducky x Hardcap Afterglow 108 Key</h3>
       <div class="price">Q89.00</div>
       <div class="meta">
-        <button class="btn add-to-cart" data-id="6" data-name="Ducky x Hardcap Afterglow 108 Key" data-price="89.00" data-img="https://m.media-amazon.com/images/I/714ftIVwLIL._AC_SX466_.jpg">
+        <button class="btn add-to-cart" data-id="6" data-name="Teclado Ducky x Hardcap Afterglow 108 Key" data-price="89.00" data-img="https://m.media-amazon.com/images/I/714ftIVwLIL._AC_SX466_.jpg">
           <i class="fa fa-cart-plus"></i>Agregar
         </button>
       </div>
@@ -1181,19 +1537,28 @@ footer {
   </div>
 </section>
 
+<!-- Newsletter -->
+<section class="newsletter">
+  <h3>¡No te pierdas nuestras ofertas!</h3>
+  <p>Suscríbete a nuestro newsletter y sé el primero en enterarte de promociones exclusivas, nuevos productos y descuentos especiales.</p>
+  <div class="newsletter-form">
+    <input type="email" placeholder="Tu correo electrónico">
+    <button type="submit">Suscribirme</button>
+  </div>
+</section>
+
 <!-- Sección "Todos los productos" -->
 <section id="todos-productos">
-  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
     <h2>🛒 Todos los Productos</h2>
     <a href="productos.html" class="btn" style="font-size: 14px;">
       <i class="fa fa-arrow-right"></i>Ver más productos
     </a>
   </div>
   <div id="productos-container" class="grid">
-    <!-- Los productos se cargarán dinámicamente aquí -->
-    <div class="loading" style="grid-column: 1/-1; text-align: center; padding: 40px;">
-      <i class="fa fa-spinner fa-spin" style="font-size: 24px; color: var(--secundario);"></i>
-      <p style="color: var(--muted); margin-top: 10px;">Cargando productos...</p>
+    <div class="loading" style="grid-column: 1/-1; text-align: center; padding: 60px 20px;">
+      <i class="fa fa-spinner fa-spin" style="font-size: 32px; color: var(--secundario); margin-bottom: 15px;"></i>
+      <p style="color: var(--muted); margin-top: 10px; font-size: 16px;">Cargando productos...</p>
     </div>
   </div>
 </section>
@@ -1210,35 +1575,43 @@ footer {
             <span class="tagline">Tecnología de Vanguardia</span>
           </div>
         </a>
-        <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px;">
-          Líder en tecnología y electrónica en Guatemala. Productos de calidad con garantía y servicio post-venta.
+        <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px; font-size: 14px; line-height: 1.6;">
+          Líder en tecnología y electrónica en Guatemala. Ofrecemos productos de calidad con garantía y servicio post-venta excepcional. Tu tienda de confianza para tecnología de última generación.
         </p>
-        <div style="display: flex; gap: 15px;">
-          <a href="#" style="color: var(--blanco); font-size: 20px;"><i class="fa fa-facebook"></i></a>
-          <a href="#" style="color: var(--blanco); font-size: 20px;"><i class="fa fa-instagram"></i></a>
-          <a href="#" style="color: var(--blanco); font-size: 20px;"><i class="fa fa-twitter"></i></a>
-          <a href="#" style="color: var(--blanco); font-size: 20px;"><i class="fa fa-youtube"></i></a>
+        <div style="display: flex; gap: 15px; margin-top: 20px;">
+          <a href="#" style="color: var(--blanco); font-size: 20px; background: rgba(255,255,255,0.1); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: var(--transition);">
+            <i class="fa fa-facebook"></i>
+          </a>
+          <a href="#" style="color: var(--blanco); font-size: 20px; background: rgba(255,255,255,0.1); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: var(--transition);">
+            <i class="fa fa-instagram"></i>
+          </a>
+          <a href="#" style="color: var(--blanco); font-size: 20px; background: rgba(255,255,255,0.1); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: var(--transition);">
+            <i class="fa fa-twitter"></i>
+          </a>
+          <a href="#" style="color: var(--blanco); font-size: 20px; background: rgba(255,255,255,0.1); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: var(--transition);">
+            <i class="fa fa-youtube"></i>
+          </a>
         </div>
       </div>
       <div class="footer-section">
         <h4>Enlaces Rápidos</h4>
-        <a href="index.html">Inicio</a>
-        <a href="productos.html">Productos</a>
-        <a href="#ofertas-especiales">Ofertas</a>
-        <a href="#ducky">Marcas</a>
-        <a href="corporativo.html">Corporativo</a>
-        <a href="#">Sobre Nosotros</a>
-        <a href="#">Contacto</a>
+        <a href="index.html"><i class="fa fa-home"></i>Inicio</a>
+        <a href="productos.html"><i class="fa fa-shopping-bag"></i>Productos</a>
+        <a href="#ofertas-especiales"><i class="fa fa-fire"></i>Ofertas</a>
+        <a href="#ducky"><i class="fa fa-keyboard"></i>Marcas</a>
+        <a href="corporativo.html"><i class="fa fa-briefcase"></i>Corporativo</a>
+        <a href="#"><i class="fa fa-info-circle"></i>Sobre Nosotros</a>
+        <a href="#"><i class="fa fa-phone"></i>Contacto</a>
       </div>
       <div class="footer-section">
         <h4>Categorías</h4>
-        <a href="#">Electrónica</a>
-        <a href="#">Computación</a>
-        <a href="#">Accesorios</a>
-        <a href="#">Hogar Inteligente</a>
-        <a href="#">Gaming</a>
-        <a href="#">Audio</a>
-        <a href="#">Oficina</a>
+        <a href="#"><i class="fa fa-laptop"></i>Electrónica</a>
+        <a href="#"><i class="fa fa-desktop"></i>Computación</a>
+        <a href="#"><i class="fa fa-headphones"></i>Accesorios</a>
+        <a href="#"><i class="fa fa-home"></i>Hogar Inteligente</a>
+        <a href="#"><i class="fa fa-gamepad"></i>Gaming</a>
+        <a href="#"><i class="fa fa-volume-up"></i>Audio</a>
+        <a href="#"><i class="fa fa-print"></i>Oficina</a>
       </div>
       <div class="footer-section">
         <h4>Contacto</h4>
@@ -1250,22 +1623,22 @@ footer {
       </div>
       <div class="footer-section">
         <h4>Ayuda</h4>
-        <a href="#">Preguntas Frecuentes</a>
-        <a href="#">Envíos y Entregas</a>
-        <a href="#">Devoluciones</a>
-        <a href="#">Garantías</a>
-        <a href="#">Términos y Condiciones</a>
-        <a href="#">Política de Privacidad</a>
+        <a href="#"><i class="fa fa-question-circle"></i>Preguntas Frecuentes</a>
+        <a href="#"><i class="fa fa-truck"></i>Envíos y Entregas</a>
+        <a href="#"><i class="fa fa-exchange"></i>Devoluciones</a>
+        <a href="#"><i class="fa fa-shield-alt"></i>Garantías</a>
+        <a href="#"><i class="fa fa-file-contract"></i>Términos y Condiciones</a>
+        <a href="#"><i class="fa fa-lock"></i>Política de Privacidad</a>
       </div>
     </div>
     <div class="copyright">
-      &copy; 2025 NODOX Guatemala. Todos los derechos reservados.
+      &copy; 2025 NODOX Guatemala - Tecnología de Vanguardia. Todos los derechos reservados.
     </div>
   </div>
 </footer>
 </main>
 
-<!-- Mantener los mismos elementos de modales, carrito, auth popup -->
+<!-- Overlay y sidebar del carrito -->
 <div class="cart-overlay" id="cart-overlay"></div>
 <div class="cart-sidebar" id="cart-sidebar">
   <div class="cart-sidebar-header">
@@ -1274,21 +1647,25 @@ footer {
   </div>
   <div class="cart-sidebar-body" id="cart-sidebar-items">
     <div class="empty-cart">
-      <i class="fa fa-shopping-cart" style="font-size: 40px; color: #ddd;"></i>
-      <p>Tu carrito está vacío</p>
+      <i class="fa fa-shopping-cart" style="font-size: 50px; color: var(--gris-claro); margin-bottom: 15px;"></i>
+      <p style="color: var(--muted); font-size: 16px;">Tu carrito está vacío</p>
+      <p style="color: var(--muted); font-size: 14px; margin-top: 10px;">Agrega productos para continuar</p>
     </div>
   </div>
   <div class="cart-sidebar-footer">
     <div class="cart-total">
-      <span>Total:</span>
-      <span id="sidebar-cart-total">Q0.00</span>
+      <span style="font-size: 18px;">Total:</span>
+      <span id="sidebar-cart-total" style="font-size: 22px; color: var(--secundario);">Q0.00</span>
     </div>
     <div class="cart-actions">
-      <a href="#" class="btn" id="sidebar-checkout-btn">Pagar</a>
+      <a href="#" class="btn" id="sidebar-checkout-btn" style="padding: 15px; font-size: 16px;">
+        <i class="fa fa-credit-card"></i> Proceder al Pago
+      </a>
     </div>
   </div>
 </div>
 
+<!-- Popup de Login/Registro -->
 <div class="auth-popup" id="auth-popup">
   <div class="auth-popup-content">
     <button class="auth-popup-close">&times;</button>
@@ -1317,10 +1694,51 @@ footer {
   </div>
 </div>
 
-<!-- JavaScript (mantener funciones existentes pero adaptar colores) -->
+<!-- JavaScript -->
 <script>
-// Mantener todas las funciones JavaScript existentes...
-// Solo se muestran las funciones principales para mantener la respuesta breve
+// Toggle dropdown menus
+function toggleDropdown(dropdown) {
+  const menu = dropdown.querySelector('.dropdown-menu');
+  const isShown = menu.classList.contains('show');
+
+  // Close all dropdowns first
+  document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('show'));
+
+  if (!isShown) {
+    menu.classList.add('show');
+  }
+}
+
+// Setup toggle on buttons
+document.querySelectorAll('.dropdown-toggle').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    toggleDropdown(btn.parentElement);
+  });
+});
+
+// Close dropdowns on outside click
+document.addEventListener('click', () => {
+  document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('show'));
+});
+
+// Slider automático
+const slides = document.querySelectorAll('.hero-visual a.slide');
+let currentIndex = 0;
+const slideInterval = 4000; // 4 segundos
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+  });
+}
+
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % slides.length;
+  showSlide(currentIndex);
+}
+
+setInterval(nextSlide, slideInterval);
 
 // Sistema de Carrito con localStorage
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -1370,8 +1788,9 @@ function updateCartUI() {
       </div>`;
     sidebarCartItems.innerHTML = `
       <div class="empty-cart">
-        <i class="fa fa-shopping-cart" style="font-size: 40px; color: #ddd;"></i>
-        <p>Tu carrito está vacío</p>
+        <i class="fa fa-shopping-cart" style="font-size: 50px; color: var(--gris-claro); margin-bottom: 15px;"></i>
+        <p style="color: var(--muted); font-size: 16px;">Tu carrito está vacío</p>
+        <p style="color: var(--muted); font-size: 14px; margin-top: 10px;">Agrega productos para continuar</p>
       </div>`;
     return;
   }
@@ -1412,7 +1831,7 @@ function updateCartUI() {
             <span>${item.quantity}</span>
             <button onclick="updateCartItemQuantity(${index}, 1)">+</button>
           </div>
-          <div style="font-weight: 600; color: var(--primario); margin-top: 5px;">Total: Q${itemTotal}</div>
+          <div style="font-weight: 700; color: var(--primario); margin-top: 8px; font-size: 15px;">Total: Q${itemTotal}</div>
         </div>
         <button class="cart-item-remove" onclick="removeFromCart(${index})">
           <i class="fa fa-trash"></i>
@@ -1426,17 +1845,621 @@ function updateCartUI() {
   saveCart();
 }
 
-// Inicializar al cargar la página
+// Función para agregar al carrito
+function addToCart(product) {
+  const existingItem = cart.find(item => item.id === product.id);
+
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    cart.push({
+      id: product.id,
+      name: product.name,
+      price: parseFloat(product.price),
+      img: product.img,
+      quantity: 1
+    });
+  }
+
+  updateCartUI();
+  showNotification(`${product.name} agregado al carrito`, 'success');
+}
+
+// Función para actualizar cantidad de un item
+function updateCartItemQuantity(index, change) {
+  const item = cart[index];
+  item.quantity += change;
+
+  if (item.quantity <= 0) {
+    cart.splice(index, 1);
+  }
+
+  updateCartUI();
+
+  if (change > 0) {
+    showNotification(`Cantidad de ${item.name} aumentada`, 'success');
+  } else {
+    showNotification(`Cantidad de ${item.name} disminuida`, 'success');
+  }
+}
+
+// Función para eliminar un item del carrito
+function removeFromCart(index) {
+  const itemName = cart[index].name;
+  cart.splice(index, 1);
+  updateCartUI();
+  showNotification(`${itemName} eliminado del carrito`, 'error');
+}
+
+// Función para mostrar notificación
+function showNotification(message, type = 'success') {
+  const notification = document.createElement('div');
+  notification.className = `notification ${type}`;
+  notification.innerHTML = `
+    <i class="fa ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+    <span>${message}</span>
+  `;
+
+  document.body.appendChild(notification);
+
+  setTimeout(() => {
+    notification.classList.add('show');
+  }, 10);
+
+  setTimeout(() => {
+    notification.classList.remove('show');
+    setTimeout(() => {
+      notification.remove();
+    }, 300);
+  }, 3000);
+}
+
+// Función para abrir el sidebar del carrito
+function openCartSidebar() {
+  document.getElementById('cart-overlay').style.display = 'block';
+  document.getElementById('cart-sidebar').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+// Función para cerrar el sidebar del carrito
+function closeCartSidebar() {
+  document.getElementById('cart-overlay').style.display = 'none';
+  document.getElementById('cart-sidebar').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// Event listeners para los botones de agregar al carrito
+document.querySelectorAll('.add-to-cart').forEach(button => {
+  button.addEventListener('click', function() {
+    const product = {
+      id: this.getAttribute('data-id'),
+      name: this.getAttribute('data-name'),
+      price: this.getAttribute('data-price'),
+      img: this.getAttribute('data-img')
+    };
+    addToCart(product);
+  });
+});
+
+// Event listeners para los botones del carrito
+document.getElementById('view-cart-btn').addEventListener('click', function(e) {
+  e.preventDefault();
+  openCartSidebar();
+});
+
+document.getElementById('checkout-btn').addEventListener('click', function(e) {
+  e.preventDefault();
+  if (cart.length > 0) {
+    alert('Procediendo al pago...');
+  } else {
+    showNotification('Tu carrito está vacío', 'error');
+  }
+});
+
+document.getElementById('sidebar-checkout-btn').addEventListener('click', function(e) {
+  e.preventDefault();
+  if (cart.length > 0) {
+    alert('Procediendo al pago...');
+  } else {
+    showNotification('Tu carrito está vacío', 'error');
+  }
+});
+
+// Event listeners para el sidebar del carrito
+document.querySelector('.cart-sidebar-close').addEventListener('click', closeCartSidebar);
+document.getElementById('cart-overlay').addEventListener('click', closeCartSidebar);
+
+// Cerrar el sidebar con la tecla ESC
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeCartSidebar();
+  }
+});
+
+// Sistema de Login/Registro Popup
+function openAuthPopup(tab = 'login') {
+  document.getElementById('auth-popup').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  switchAuthTab(tab);
+}
+
+function closeAuthPopup() {
+  document.getElementById('auth-popup').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function switchAuthTab(tab) {
+  document.querySelectorAll('.auth-tab').forEach(t => {
+    t.classList.toggle('active', t.getAttribute('data-tab') === tab);
+  });
+
+  document.querySelectorAll('.auth-form').forEach(form => {
+    form.classList.toggle('active', form.id === `${tab}-form`);
+  });
+}
+
+// Event listeners para el popup de auth
+document.querySelector('.auth-popup-close').addEventListener('click', closeAuthPopup);
+document.getElementById('auth-popup').addEventListener('click', function(e) {
+  if (e.target === this) {
+    closeAuthPopup();
+  }
+});
+
+document.querySelectorAll('.auth-tab').forEach(tab => {
+  tab.addEventListener('click', function() {
+    switchAuthTab(this.getAttribute('data-tab'));
+  });
+});
+
+// Cerrar con ESC
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && document.getElementById('auth-popup').style.display === 'flex') {
+    closeAuthPopup();
+  }
+});
+
+// Formularios de login/registro
+document.getElementById('login-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  showNotification('Sesión iniciada correctamente', 'success');
+  closeAuthPopup();
+});
+
+document.getElementById('register-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  showNotification('Registro exitoso. Bienvenido!', 'success');
+  closeAuthPopup();
+});
+
+// FUNCIÓN PARA CARGAR OFERTAS DESDE PRODUCTOS.HTML
+async function loadOfertasFromPage() {
+  try {
+    const ofertasContainer = document.getElementById('ofertas-container');
+    
+    const ofertasEjemplo = [
+      {
+        id: 103,
+        name: "Teclado Mecánico Ducky - Year of the Dragon 2024",
+        price: 229.00,
+        oldPrice: 399.00,
+        image: "https://ducky.global/cdn/shop/files/ducky_asset_dragon_product-2.jpg?v=1740390639",
+        badge: "oferta"
+      },
+      {
+        id: 107,
+        name: "Mouse Gaming RGB 16000DPI",
+        price: 75.00,
+        oldPrice: 99.00,
+        image: "https://via.placeholder.com/300x200.png/001a33/ffb100?text=Mouse+Gaming",
+        badge: "oferta"
+      },
+      {
+        id: 109,
+        name: "Monitor LED 24\" Full HD",
+        price: 450.00,
+        oldPrice: 550.00,
+        image: "https://via.placeholder.com/300x200.png/001a33/ffb100?text=Monitor+LED",
+        badge: "oferta"
+      },
+      {
+        id: 117,
+        name: "Laptop 14\" Core i5 8GB RAM",
+        price: 2800.00,
+        oldPrice: 3200.00,
+        image: "https://via.placeholder.com/300x200.png/001a33/ffb100?text=Laptop+Gaming",
+        badge: "oferta"
+      }
+    ];
+    
+    try {
+      const response = await fetch('productos.html');
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      
+      const html = await response.text();
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      
+      let ofertaCards = [];
+      
+      ofertaCards = doc.querySelectorAll('.oferta-badge, .badge-oferta, [class*="oferta"], .new-badge');
+      
+      if (ofertaCards.length === 0) {
+        const allCards = doc.querySelectorAll('.card');
+        allCards.forEach(card => {
+          const oldPrice = card.querySelector('.old');
+          if (oldPrice) {
+            ofertaCards.push(card);
+          }
+        });
+      }
+      
+      if (ofertaCards.length === 0) {
+        const allElements = doc.querySelectorAll('*');
+        allElements.forEach(element => {
+          if (element.textContent && element.textContent.toLowerCase().includes('oferta')) {
+            const card = element.closest('.card');
+            if (card && !ofertaCards.includes(card)) {
+              ofertaCards.push(card);
+            }
+          }
+        });
+      }
+      
+      ofertaCards = Array.from(ofertaCards);
+      
+      if (ofertaCards.length > 0) {
+        const maxOfertas = Math.min(ofertaCards.length, 4);
+        let ofertasHTML = '';
+        
+        for (let i = 0; i < maxOfertas; i++) {
+          const card = ofertaCards[i];
+          
+          const img = card.querySelector('img');
+          const title = card.querySelector('h3');
+          const price = card.querySelector('.price');
+          const button = card.querySelector('.add-to-cart');
+          const oldPriceElem = card.querySelector('.old');
+          
+          if (img && title && price) {
+            const productId = button ? button.getAttribute('data-id') : `oferta-${i+100}`;
+            const productName = title.textContent || `Producto en Oferta ${i+1}`;
+            
+            let productPrice = 0;
+            const priceText = price.textContent;
+            const priceMatch = priceText.match(/Q([\d,.]+)/);
+            if (priceMatch) {
+              productPrice = parseFloat(priceMatch[1].replace(',', ''));
+            } else {
+              productPrice = 50 + (i * 25);
+            }
+            
+            const productImg = img.src || img.getAttribute('src') || ofertasEjemplo[i % ofertasEjemplo.length].image;
+            const oldPrice = oldPriceElem ? oldPriceElem.textContent : null;
+            
+            ofertasHTML += `
+              <article class="card">
+                <div class="product-card-container">
+                  <span class="oferta-badge">🔥 Oferta</span>
+                  <img src="${productImg}" alt="${productName}" loading="lazy">
+                  <h3>${productName.substring(0, 60)}${productName.length > 60 ? '...' : ''}</h3>
+                  <div class="price">Q${productPrice.toFixed(2)} 
+                    ${oldPrice ? `<span class="old">${oldPrice}</span>` : ''}
+                  </div>
+                  <div class="meta">
+                    <button class="btn add-to-cart" 
+                            data-id="${productId}" 
+                            data-name="${productName}" 
+                            data-price="${productPrice}" 
+                            data-img="${productImg}">
+                      <i class="fa fa-cart-plus"></i>Agregar
+                    </button>
+                  </div>
+                </div>
+              </article>
+            `;
+          }
+        }
+        
+        if (ofertasHTML) {
+          ofertasContainer.innerHTML = ofertasHTML;
+          
+          ofertasContainer.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+              const product = {
+                id: this.getAttribute('data-id'),
+                name: this.getAttribute('data-name'),
+                price: this.getAttribute('data-price'),
+                img: this.getAttribute('data-img')
+              };
+              addToCart(product);
+            });
+          });
+          
+          console.log(`Cargadas ${maxOfertas} ofertas desde productos.html`);
+          return;
+        }
+      }
+    } catch (fetchError) {
+      console.log('No se pudieron cargar ofertas desde productos.html, usando ofertas de ejemplo:', fetchError.message);
+    }
+    
+    let ofertasHTML = '';
+    ofertasEjemplo.forEach((producto, index) => {
+      ofertasHTML += `
+        <article class="card">
+          <div class="product-card-container">
+            <span class="oferta-badge">🔥 Oferta</span>
+            <img src="${producto.image}" alt="${producto.name}" loading="lazy">
+            <h3>${producto.name}</h3>
+            <div class="price">Q${producto.price.toFixed(2)} 
+              ${producto.oldPrice ? `<span class="old">Q${producto.oldPrice.toFixed(2)}</span>` : ''}
+            </div>
+            <div class="meta">
+              <button class="btn add-to-cart" 
+                      data-id="${producto.id}" 
+                      data-name="${producto.name}" 
+                      data-price="${producto.price}" 
+                      data-img="${producto.image}">
+                <i class="fa fa-cart-plus"></i>Agregar
+              </button>
+            </div>
+          </div>
+        </article>
+      `;
+    });
+    
+    ofertasContainer.innerHTML = ofertasHTML;
+    
+    ofertasContainer.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', function() {
+        const product = {
+          id: this.getAttribute('data-id'),
+          name: this.getAttribute('data-name'),
+          price: this.getAttribute('data-price'),
+          img: this.getAttribute('data-img')
+        };
+        addToCart(product);
+      });
+    });
+    
+    console.log('Cargadas ofertas de ejemplo');
+    
+  } catch (error) {
+    console.error('Error en loadOfertasFromPage:', error);
+    document.getElementById('ofertas-container').innerHTML = `
+      <div style="grid-column: 1/-1; text-align: center; padding: 40px;">
+        <i class="fa fa-exclamation-triangle" style="font-size: 32px; color: #ffaa00;"></i>
+        <p style="color: var(--muted); margin-top: 10px;">Error cargando ofertas</p>
+        <button onclick="loadOfertasFromPage()" class="btn" style="margin-top: 15px;">
+          Reintentar
+        </button>
+      </div>
+    `;
+  }
+}
+
+// FUNCIÓN PARA CARGAR TODOS LOS PRODUCTOS
+async function loadProductsFromPage() {
+  try {
+    const productosContainer = document.getElementById('productos-container');
+    
+    const productosEjemplo = [
+      {
+        id: 101,
+        name: "Lenovo Tab One - Tablet Android 10\"",
+        price: 249.00,
+        oldPrice: 299.00,
+        image: "https://store.intcomex.com/images/products/ZAF00133PA%20m.jpg"
+      },
+      {
+        id: 102,
+        name: "Xiaomi Redmi Watch 5 - Smartwatch",
+        price: 129.00,
+        oldPrice: null,
+        image: "https://store.intcomex.com/images/products/AC002XIA52m.jpg"
+      },
+      {
+        id: 103,
+        name: "Teclado Mecánico Ducky - Year of the Dragon 2024",
+        price: 229.00,
+        oldPrice: 399.00,
+        image: "https://ducky.global/cdn/shop/files/ducky_asset_dragon_product-2.jpg?v=1740390639"
+      },
+      {
+        id: 104,
+        name: "Teclado Ducky DOOM® Edition One 3 SF",
+        price: 189.00,
+        oldPrice: null,
+        image: "https://ducky.global/cdn/shop/files/one3-SF-Doom_asset_product_1.jpg?v=1742540515"
+      },
+      {
+        id: 105,
+        name: "Teclado Ducky x MK Creator Purple 32-Key",
+        price: 50.00,
+        oldPrice: null,
+        image: "https://m.media-amazon.com/images/I/71lJSq9aeRL._AC_SX466_.jpg"
+      },
+      {
+        id: 106,
+        name: "Teclado Ducky x Hardcap Afterglow 108 Key",
+        price: 89.00,
+        oldPrice: null,
+        image: "https://m.media-amazon.com/images/I/714ftIVwLIL._AC_SX466_.jpg"
+      },
+      {
+        id: 107,
+        name: "Mouse Gaming RGB 16000DPI",
+        price: 75.00,
+        oldPrice: 99.00,
+        image: "https://via.placeholder.com/300x200.png/001a33/ffb100?text=Mouse+Gaming"
+      },
+      {
+        id: 108,
+        name: "Auriculares Bluetooth Inalámbricos",
+        price: 120.00,
+        oldPrice: null,
+        image: "https://via.placeholder.com/300x200.png/001a33/ffb100?text=Auriculares"
+      }
+    ];
+    
+    try {
+      const response = await fetch('productos.html');
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      
+      const html = await response.text();
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      
+      let cards = [];
+      
+      cards = doc.querySelectorAll('.card');
+      
+      if (cards.length === 0) {
+        const productsGrid = doc.querySelector('#productsGrid');
+        if (productsGrid) {
+          cards = productsGrid.querySelectorAll('.card');
+        }
+      }
+      
+      if (cards.length === 0) {
+        cards = doc.querySelectorAll('article.card, div.card');
+      }
+      
+      if (cards.length > 0) {
+        const maxProducts = Math.min(cards.length, 8);
+        let productosHTML = '';
+        
+        for (let i = 0; i < maxProducts; i++) {
+          const card = cards[i];
+          
+          const img = card.querySelector('img');
+          const title = card.querySelector('h3');
+          const price = card.querySelector('.price');
+          const button = card.querySelector('.add-to-cart');
+          
+          if (img && title && price) {
+            const productId = button ? button.getAttribute('data-id') : `prod-${i+101}`;
+            const productName = title.textContent || `Producto ${i+1}`;
+            
+            let productPrice = 0;
+            const priceText = price.textContent;
+            const priceMatch = priceText.match(/Q([\d,.]+)/);
+            if (priceMatch) {
+              productPrice = parseFloat(priceMatch[1].replace(',', ''));
+            } else {
+              productPrice = 50 + (i * 25);
+            }
+            
+            const productImg = img.src || img.getAttribute('src') || productosEjemplo[i % productosEjemplo.length].image;
+            const oldPriceElem = card.querySelector('.old');
+            const oldPrice = oldPriceElem ? oldPriceElem.textContent : null;
+            
+            productosHTML += `
+              <article class="card">
+                <img src="${productImg}" alt="${productName}" loading="lazy">
+                <h3>${productName.substring(0, 60)}${productName.length > 60 ? '...' : ''}</h3>
+                <div class="price">Q${productPrice.toFixed(2)} 
+                  ${oldPrice ? `<span class="old">${oldPrice}</span>` : ''}
+                </div>
+                <div class="meta">
+                  <button class="btn add-to-cart" 
+                          data-id="${productId}" 
+                          data-name="${productName}" 
+                          data-price="${productPrice}" 
+                          data-img="${productImg}">
+                    <i class="fa fa-cart-plus"></i>Agregar
+                  </button>
+                </div>
+              </article>
+            `;
+          }
+        }
+        
+        if (productosHTML) {
+          productosContainer.innerHTML = productosHTML;
+          
+          productosContainer.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+              const product = {
+                id: this.getAttribute('data-id'),
+                name: this.getAttribute('data-name'),
+                price: this.getAttribute('data-price'),
+                img: this.getAttribute('data-img')
+              };
+              addToCart(product);
+            });
+          });
+          
+          console.log(`Cargados ${maxProducts} productos desde productos.html`);
+          return;
+        }
+      }
+    } catch (fetchError) {
+      console.log('No se pudo cargar desde productos.html, usando productos de ejemplo:', fetchError.message);
+    }
+    
+    let productosHTML = '';
+    productosEjemplo.forEach((producto, index) => {
+      productosHTML += `
+        <article class="card">
+          <img src="${producto.image}" alt="${producto.name}" loading="lazy">
+          <h3>${producto.name}</h3>
+          <div class="price">Q${producto.price.toFixed(2)} 
+            ${producto.oldPrice ? `<span class="old">Q${producto.oldPrice.toFixed(2)}</span>` : ''}
+          </div>
+          <div class="meta">
+            <button class="btn add-to-cart" 
+                    data-id="${producto.id}" 
+                    data-name="${producto.name}" 
+                    data-price="${producto.price}" 
+                    data-img="${producto.image}">
+              <i class="fa fa-cart-plus"></i>Agregar
+            </button>
+          </div>
+        </article>
+      `;
+    });
+    
+    productosContainer.innerHTML = productosHTML;
+    
+    productosContainer.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', function() {
+        const product = {
+          id: this.getAttribute('data-id'),
+          name: this.getAttribute('data-name'),
+          price: this.getAttribute('data-price'),
+          img: this.getAttribute('data-img')
+        };
+        addToCart(product);
+      });
+    });
+    
+    console.log('Cargados productos de ejemplo');
+    
+  } catch (error) {
+    console.error('Error en loadProductsFromPage:', error);
+    document.getElementById('productos-container').innerHTML = `
+      <div style="grid-column: 1/-1; text-align: center; padding: 40px;">
+        <i class="fa fa-exclamation-triangle" style="font-size: 32px; color: #ffaa00;"></i>
+        <p style="color: var(--muted); margin-top: 10px;">Error cargando productos</p>
+        <button onclick="loadProductsFromPage()" class="btn" style="margin-top: 15px;">
+          Reintentar
+        </button>
+      </div>
+    `;
+  }
+}
+
+// Inicializar el carrito y cargar productos al cargar la página
 document.addEventListener('DOMContentLoaded', function() {
   updateCartUI();
   
-  // Cargar productos si existen las funciones
-  if (typeof loadOfertasFromPage === 'function') {
-    loadOfertasFromPage();
-  }
-  if (typeof loadProductsFromPage === 'function') {
-    loadProductsFromPage();
-  }
+  // Cargar ofertas especiales
+  loadOfertasFromPage();
+  
+  // Cargar todos los productos
+  loadProductsFromPage();
   
   // Agregar eventos a los botones de categorías
   document.querySelectorAll('.category-link').forEach(link => {
@@ -1445,10 +2468,12 @@ document.addEventListener('DOMContentLoaded', function() {
       this.classList.add('active');
     });
   });
+  
+  // Agregar evento al botón de categorías toggle
+  document.querySelector('.categories-toggle').addEventListener('click', function() {
+    this.classList.toggle('active');
+  });
 });
-
-// Mantener todas las demás funciones existentes...
-// (addToCart, updateCartItemQuantity, removeFromCart, showNotification, etc.)
 </script>
 </body>
 </html>
