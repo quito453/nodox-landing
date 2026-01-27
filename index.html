@@ -609,6 +609,7 @@
       transition: all 0.3s ease;
       display: flex;
       align-items: center;
+      flex-direction: column;
     }
     
     .quote-badge:hover {
@@ -618,6 +619,132 @@
     
     .quote-badge i {
       margin-right: 8px;
+    }
+    
+    /* Panel expandible de cotización */
+    .quote-panel {
+      position: absolute;
+      bottom: 100%;
+      right: 0;
+      width: 350px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+      margin-bottom: 15px;
+      display: none;
+      overflow: hidden;
+      z-index: 1000;
+    }
+
+    .quote-panel-header {
+      background-color: var(--primario);
+      color: white;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .quote-panel-header h6 {
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .quote-panel-header .btn-close {
+      color: white;
+      opacity: 0.8;
+      filter: brightness(0) invert(1);
+      padding: 0.5rem;
+    }
+
+    .quote-panel-header .btn-close:hover {
+      opacity: 1;
+    }
+
+    .quote-items {
+      max-height: 300px;
+      overflow-y: auto;
+      padding: 0;
+    }
+
+    .quote-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 15px;
+      border-bottom: 1px solid #eee;
+      transition: background-color 0.2s;
+    }
+
+    .quote-item:hover {
+      background-color: #f9f9f9;
+    }
+
+    .quote-item:last-child {
+      border-bottom: none;
+    }
+
+    .quote-item-name {
+      flex-grow: 1;
+      margin-right: 10px;
+      font-size: 0.9rem;
+      color: var(--primario);
+    }
+
+    .quote-item-remove {
+      background: none;
+      border: none;
+      color: #dc3545;
+      font-size: 1rem;
+      cursor: pointer;
+      padding: 5px;
+      border-radius: 4px;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+    }
+
+    .quote-item-remove:hover {
+      background-color: #f8d7da;
+      color: #c82333;
+    }
+
+    .quote-panel-footer {
+      padding: 15px;
+      border-top: 1px solid #eee;
+      display: flex;
+      gap: 10px;
+      justify-content: space-between;
+    }
+
+    .quote-panel-footer .btn {
+      flex: 1;
+      font-size: 0.8rem;
+      padding: 8px 12px;
+    }
+
+    .empty-quote {
+      padding: 30px 15px;
+      text-align: center;
+      color: #6c757d;
+    }
+
+    .empty-quote i {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      opacity: 0.5;
+    }
+
+    /* Mostrar panel cuando está activo */
+    .quote-badge.active .quote-panel {
+      display: block;
+    }
+
+    .quote-badge.active {
+      border-radius: 25px 25px 0 0;
     }
     
     /* Cart items counter */
@@ -663,6 +790,11 @@
         padding: 8px 15px;
       }
       
+      .quote-panel {
+        width: 300px;
+        right: -50px;
+      }
+      
       .whatsapp-float {
         bottom: 20px;
         right: 20px;
@@ -688,6 +820,21 @@
         text-align: center;
         margin-bottom: 5px;
       }
+      
+      .quote-panel {
+        width: 280px;
+        right: -30px;
+      }
+      
+      .quote-panel-footer {
+        flex-direction: column;
+      }
+    }
+    
+    /* Estilos para badges en los productos de cotización */
+    .badge {
+      font-size: 0.7em;
+      padding: 0.25em 0.5em;
     }
   </style>
 </head>
@@ -1173,10 +1320,29 @@
   </footer>
 
   <!-- Floating Elements -->
-  <div class="quote-badge" onclick="scrollToContact()">
+  <div class="quote-badge" id="quoteBadge">
     <i class="bi bi-cart"></i>
     <span>Cotización</span>
     <div class="cart-counter" id="cartCounter">0</div>
+    
+    <!-- Panel de cotización expandible -->
+    <div class="quote-panel" id="quotePanel">
+      <div class="quote-panel-header">
+        <h6>Productos en cotización</h6>
+        <button type="button" class="btn-close" id="closeQuotePanel"></button>
+      </div>
+      <div class="quote-items" id="quoteItemsList">
+        <!-- Los elementos de la cotización se agregarán aquí dinámicamente -->
+      </div>
+      <div class="quote-panel-footer">
+        <button class="btn btn-sm btn-primary" onclick="scrollToContact()">
+          <i class="bi bi-envelope"></i> Solicitar Cotización
+        </button>
+        <button class="btn btn-sm btn-outline-danger" id="clearAllQuoteItems">
+          <i class="bi bi-trash"></i> Limpiar Todo
+        </button>
+      </div>
+    </div>
   </div>
 
   <a href="https://wa.me/50245917700?text=Hola%20Nodox,%20me%20interesan%20sus%20productos" 
@@ -1193,6 +1359,120 @@
       document.getElementById('contacto').scrollIntoView({ 
         behavior: 'smooth' 
       });
+    }
+    
+    // Variables globales
+    let quoteItems = JSON.parse(localStorage.getItem('nodoxQuoteItems')) || [];
+    
+    // Función para actualizar el panel de cotización
+    function updateQuotePanel() {
+      const quoteItemsList = document.getElementById('quoteItemsList');
+      quoteItemsList.innerHTML = '';
+      
+      if (quoteItems.length === 0) {
+        quoteItemsList.innerHTML = `
+          <div class="empty-quote">
+            <i class="bi bi-cart"></i>
+            <p>No hay productos en la cotización</p>
+          </div>
+        `;
+        return;
+      }
+      
+      // Agrupar productos por nombre y contar ocurrencias
+      const productCounts = {};
+      quoteItems.forEach(item => {
+        productCounts[item.product] = (productCounts[item.product] || 0) + 1;
+      });
+      
+      // Crear elementos para cada producto único
+      Object.entries(productCounts).forEach(([productName, count]) => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'quote-item';
+        itemDiv.innerHTML = `
+          <div class="quote-item-name">
+            ${productName}
+            ${count > 1 ? `<span class="badge bg-secondary ms-2">${count}</span>` : ''}
+          </div>
+          <button class="quote-item-remove" data-product="${productName}">
+            <i class="bi bi-trash"></i>
+          </button>
+        `;
+        quoteItemsList.appendChild(itemDiv);
+      });
+      
+      // Agregar event listeners a los botones de eliminar
+      document.querySelectorAll('.quote-item-remove').forEach(button => {
+        button.addEventListener('click', function() {
+          const productToRemove = this.getAttribute('data-product');
+          removeFromQuote(productToRemove);
+        });
+      });
+    }
+    
+    // Función para eliminar un producto específico de la cotización
+    function removeFromQuote(productName) {
+      // Encontrar y eliminar todas las ocurrencias del producto
+      quoteItems = quoteItems.filter(item => item.product !== productName);
+      
+      // Guardar en localStorage
+      localStorage.setItem('nodoxQuoteItems', JSON.stringify(quoteItems));
+      
+      // Actualizar contador y panel
+      updateCartCounter();
+      updateQuotePanel();
+      
+      // Mostrar notificación
+      showNotification(`"${productName}" eliminado de la cotización`);
+    }
+    
+    // Función para limpiar toda la cotización
+    function clearAllQuoteItems() {
+      if (quoteItems.length > 0) {
+        quoteItems = [];
+        localStorage.removeItem('nodoxQuoteItems');
+        updateCartCounter();
+        updateQuotePanel();
+        showNotification('Todos los productos han sido eliminados de la cotización');
+      }
+    }
+    
+    // Función para actualizar el contador del carrito
+    function updateCartCounter() {
+      const cartCounter = document.getElementById('cartCounter');
+      cartCounter.textContent = quoteItems.length;
+      cartCounter.style.display = quoteItems.length > 0 ? 'flex' : 'none';
+      
+      // También actualizar el panel si está abierto
+      if (document.getElementById('quoteBadge').classList.contains('active')) {
+        updateQuotePanel();
+      }
+    }
+    
+    // Función para mostrar notificaciones
+    function showNotification(message) {
+      // Crear notificación
+      const notification = document.createElement('div');
+      notification.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 30px;
+        background: var(--primario);
+        color: white;
+        padding: 15px 25px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        z-index: 10000;
+        animation: slideIn 0.3s ease;
+      `;
+      notification.textContent = message;
+      document.body.appendChild(notification);
+      
+      // Remover después de 3 segundos
+      setTimeout(() => {
+        notification.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => notification.remove(), 300);
+      }, 3000);
     }
     
     // Filtrado de productos
@@ -1257,9 +1537,7 @@
         });
       }
       
-      // Sistema de cotización
-      const cartCounter = document.getElementById('cartCounter');
-      let quoteItems = JSON.parse(localStorage.getItem('nodoxQuoteItems')) || [];
+      // Inicializar contador del carrito
       updateCartCounter();
       
       // Botones de agregar a cotización
@@ -1279,52 +1557,53 @@
           // Actualizar contador
           updateCartCounter();
           
+          // Abrir automáticamente el panel de cotización
+          document.getElementById('quoteBadge').classList.add('active');
+          updateQuotePanel();
+          
           // Mostrar confirmación
           showNotification(`"${product}" agregado a cotización`);
         });
       });
       
-      // Botón de cotización flotante
-      document.querySelector('.quote-badge').addEventListener('click', function() {
-        if (quoteItems.length > 0) {
-          // Prellenar el formulario con los productos seleccionados
-          const productList = [...new Set(quoteItems.map(item => item.product))].join(', ');
-          document.getElementById('mensaje').value = `Productos de interés: ${productList}\n\n`;
-          scrollToContact();
-        } else {
-          scrollToContact();
+      // Botón para limpiar toda la cotización
+      document.getElementById('clearAllQuoteItems').addEventListener('click', clearAllQuoteItems);
+      
+      // Abrir/cerrar panel de cotización
+      document.getElementById('quoteBadge').addEventListener('click', function(e) {
+        // Solo abrir el panel si se hace clic en el badge, no en los botones dentro del panel
+        if (!e.target.closest('.quote-panel') && !e.target.closest('.quote-item-remove')) {
+          this.classList.toggle('active');
+          updateQuotePanel();
         }
       });
       
-      function updateCartCounter() {
-        cartCounter.textContent = quoteItems.length;
-        cartCounter.style.display = quoteItems.length > 0 ? 'flex' : 'none';
-      }
+      // Cerrar panel al hacer clic en el botón de cerrar
+      document.getElementById('closeQuotePanel').addEventListener('click', function(e) {
+        e.stopPropagation();
+        document.getElementById('quoteBadge').classList.remove('active');
+      });
       
-      function showNotification(message) {
-        // Crear notificación
-        const notification = document.createElement('div');
-        notification.style.cssText = `
-          position: fixed;
-          top: 100px;
-          right: 30px;
-          background: var(--primario);
-          color: white;
-          padding: 15px 25px;
-          border-radius: 8px;
-          box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-          z-index: 10000;
-          animation: slideIn 0.3s ease;
-        `;
-        notification.textContent = message;
-        document.body.appendChild(notification);
+      // Cerrar panel al hacer clic fuera de él
+      document.addEventListener('click', function(e) {
+        const quoteBadge = document.getElementById('quoteBadge');
+        const quotePanel = document.getElementById('quotePanel');
         
-        // Remover después de 3 segundos
-        setTimeout(() => {
-          notification.style.animation = 'slideOut 0.3s ease';
-          setTimeout(() => notification.remove(), 300);
-        }, 3000);
-      }
+        if (!quoteBadge.contains(e.target) && quoteBadge.classList.contains('active')) {
+          quoteBadge.classList.remove('active');
+        }
+      });
+      
+      // Botón de cotización flotante - Prellenar formulario
+      document.getElementById('quoteBadge').addEventListener('click', function(e) {
+        if (!e.target.closest('.quote-panel') && quoteItems.length > 0) {
+          // Prellenar el formulario con los productos seleccionados
+          const productList = [...new Set(quoteItems.map(item => item.product))].join(', ');
+          const currentMessage = document.getElementById('mensaje').value;
+          const productsText = `\n\nProductos de interés: ${productList}\n\n`;
+          document.getElementById('mensaje').value = currentMessage + productsText;
+        }
+      });
       
       // Añadir estilos de animación para notificaciones
       const style = document.createElement('style');
