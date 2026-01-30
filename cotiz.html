@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cotización - Nodox Products</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 40px;
+            color: #0B1A33;
+            background: linear-gradient(135deg, #e8ebf2, #f7f9fc);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 25px;
+            border-bottom: 3px solid #c7ccd6;
+        }
+        .logo img{
+            width: 230px;
+            filter: drop-shadow(0px 3px 6px rgba(0,0,0,0.15));
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            color: #0B1A33;
+            font-size: 36px;
+            letter-spacing: 4px;
+            font-weight: 700;
+            text-shadow: 0px 1px 3px rgba(0,0,0,0.15);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        th {
+            background: #0B1A33;
+            color: white;
+            padding: 16px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        td {
+            padding: 16px;
+            border-bottom: 1px solid #e6e9ef;
+            font-size: 15px;
+        }
+        input {
+            border: 1px solid #ddd;
+            padding: 8px;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input:focus {
+            outline: none;
+            border-color: #0B1A33;
+            box-shadow: 0 0 5px rgba(11, 26, 51, 0.3);
+        }
+        .button-row {
+            display: flex;
+            justify-content: flex-start;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .row-button {
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .add-button {
+            background-color: #0B1A33;
+            color: white;
+        }
+        .remove-button {
+            background-color: #d32f2f;
+            color: white;
+        }
+        .print-button {
+            background-color: #2e7d32;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-left: auto;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .print-button:hover {
+            background-color: #1b5e20;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        .row-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        .row-button:active {
+            transform: scale(0.95);
+        }
+        .totals {
+            margin-top: 30px;
+            font-size: 20px;
+            text-align: right;
+            font-weight: 700;
+            color: #0B1A33;
+        }
+        .footer {
+            margin-top: 70px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .accept-box {
+            width: 45%;
+            border-top: 3px solid #0B1A33;
+            padding-top: 15px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .delete-cell {
+            width: 50px;
+            text-align: center;
+        }
+        .delete-btn {
+            background: none;
+            border: none;
+            color: #d32f2f;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+        .delete-btn:hover {
+            background-color: #ffebee;
+            transform: scale(1.1);
+        }
+        .header-input {
+            width: 150px;
+            margin-left: 5px;
+        }
+        .controls-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        /* Print-specific styles */
+        @media print {
+            body {
+                margin: 0;
+                padding: 20px;
+                background: white !important;
+                color: black !important;
+            }
+
+            .button-row, .print-button, .delete-btn, .delete-cell,
+            #addRow, #removeRow, .print-button-container {
+                display: none !important;
+            }
+
+            table {
+                box-shadow: none !important;
+                border: 1px solid #ddd !important;
+            }
+
+            th {
+                background: #0B1A33 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+            }
+
+            input {
+                border: none !important;
+                padding: 0 !important;
+                background: transparent !important;
+                box-shadow: none !important;
+                pointer-events: none;
+                width: 100% !important;
+            }
+
+            .description, .quantity, .unit-price {
+                appearance: none;
+                -moz-appearance: textfield;
+                -webkit-appearance: none;
+            }
+
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            /* Hide input spinners in Firefox */
+            input[type=number] {
+                -moz-appearance: textfield;
+            }
+
+            .header-info input {
+                font-weight: bold;
+                color: black;
+                border: none;
+                background: transparent;
+            }
+
+            .client-name-input {
+                font-weight: bold;
+                color: black;
+                border: none;
+                background: transparent;
+                width: auto !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo"><img src="nodoxlogoazul.png" style="width:180px; height:auto;" /></div>
+        <div class="header-info">
+            <p><strong>No.:</strong> <input type="text" id="quoteNumber" value="0000" class="header-input"></p>
+            <p><strong>Fecha:</strong> <input type="date" id="quoteDate" class="header-input"></p>
+        </div>
+    </div>
+<br>
+    <h1>COTIZACIÓN</h1>
+<br>
+    <p><strong>Cliente:</strong> <input type="text" id="clientName" placeholder="Nombre del Cliente" style="width: 300px;" class="client-name-input"></p>
+
+    <table id="main-table">
+        <thead>
+            <tr>
+                <th>Descripción</th>
+                <th>Cantidad</th>
+                <th>Precio Unitario</th>
+                <th>Total</th>
+                <th class="delete-cell no-print"></th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+            <tr>
+                <td><input type="text" class="description" placeholder="Producto o servicio"></td>
+                <td><input type="number" class="quantity" min="0" value="0" step="1"></td>
+                <td><input type="number" class="unit-price" min="0" value="0.00" step="0.01"></td>
+                <td class="row-total">Q 0.00</td>
+                <td class="delete-cell no-print"><button class="delete-btn">×</button></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="description" placeholder="Producto o servicio"></td>
+                <td><input type="number" class="quantity" min="0" value="0" step="1"></td>
+                <td><input type="number" class="unit-price" min="0" value="0.00" step="0.01"></td>
+                <td class="row-total">Q 0.00</td>
+                <td class="delete-cell no-print"><button class="delete-btn">×</button></td>
+            </tr>
+            <tr>
+                <td><input type="text" class="description" placeholder="Producto o servicio"></td>
+                <td><input type="number" class="quantity" min="0" value="0" step="1"></td>
+                <td><input type="number" class="unit-price" min="0" value="0.00" step="0.01"></td>
+                <td class="row-total">Q 0.00</td>
+                <td class="delete-cell no-print"><button class="delete-btn">×</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="controls-row">
+        <div class="button-row no-print">
+            <button class="row-button add-button" id="addRow">+</button>
+            <button class="row-button remove-button" id="removeRow">−</button>
+        </div>
+
+        <div class="print-button-container no-print">
+            <button class="print-button" id="printBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
+                    <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
+                </svg>
+                Imprimir / Guardar PDF
+            </button>
+        </div>
+    </div>
+
+<br>
+    <p class="totals"><strong>Impuesto incluido — Total: <span id="grand-total">Q 0.00</span></strong></p>
+
+    <br><br>
+    <div class="footer">
+        <div class="accept-box">Aceptado por:</div>
+        <div class="accept-box">Fecha de aceptación:</div>
+    </div>
+
+    <footer style="margin-top:80px; text-align:center; padding-top:25px; border-top:2px solid #c7ccd6; font-size:14px; color:#0B1A33; opacity:0.8;">
+        <p><strong>Nodox Products</strong> — Innovación y Tecnología para tu Empresa</p>
+        <p><a href="https://nodox.online">Nodox.online</a> · carla.chour@promotorsgt.com · +502 4591-7700</p>
+        <p>Guatemala, C.A.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tableBody = document.getElementById('table-body');
+
+            // Set default date to today
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('quoteDate').value = today;
+
+            // Function to calculate row total
+            function calculateRowTotal(row) {
+                const quantity = parseFloat(row.querySelector('.quantity').value) || 0;
+                const unitPrice = parseFloat(row.querySelector('.unit-price').value) || 0;
+                const total = quantity * unitPrice;
+                row.querySelector('.row-total').textContent = `Q ${total.toFixed(2)}`;
+                return total;
+            }
+
+            // Function to calculate grand total
+            function calculateGrandTotal() {
+                const rows = document.querySelectorAll('#table-body tr');
+                let grandTotal = 0;
+
+                rows.forEach(row => {
+                    grandTotal += calculateRowTotal(row);
+                });
+
+                document.getElementById('grand-total').textContent = `Q ${grandTotal.toFixed(2)}`;
+            }
+
+            // Add event listeners to quantity and unit price inputs
+            function addInputListeners(row) {
+                row.querySelector('.quantity').addEventListener('input', calculateGrandTotal);
+                row.querySelector('.unit-price').addEventListener('input', calculateGrandTotal);
+                row.querySelector('.quantity').addEventListener('change', calculateGrandTotal);
+                row.querySelector('.unit-price').addEventListener('change', calculateGrandTotal);
+            }
+
+            // Add delete button functionality to a row
+            function addDeleteButtonListener(row) {
+                const deleteBtn = row.querySelector('.delete-btn');
+                deleteBtn.addEventListener('click', function() {
+                    if (tableBody.children.length > 1) {
+                        row.remove();
+                        calculateGrandTotal();
+                    } else {
+                        alert('Debe haber al menos una fila en la tabla.');
+                    }
+                });
+            }
+
+            // Initialize existing rows
+            document.querySelectorAll('#table-body tr').forEach(row => {
+                addInputListeners(row);
+                addDeleteButtonListener(row);
+            });
+
+            // Add row functionality
+            document.getElementById('addRow').addEventListener('click', function() {
+                const newRow = document.createElement('tr');
+
+                newRow.innerHTML = `
+                    <td><input type="text" class="description" placeholder="Producto o servicio"></td>
+                    <td><input type="number" class="quantity" min="0" value="0" step="1"></td>
+                    <td><input type="number" class="unit-price" min="0" value="0.00" step="0.01"></td>
+                    <td class="row-total">Q 0.00</td>
+                    <td class="delete-cell no-print"><button class="delete-btn">×</button></td>
+                `;
+
+                tableBody.appendChild(newRow);
+
+                // Add event listeners to new row
+                addInputListeners(newRow);
+                addDeleteButtonListener(newRow);
+
+                // Calculate totals after adding new row
+                calculateGrandTotal();
+            });
+
+            // Remove last row functionality
+            document.getElementById('removeRow').addEventListener('click', function() {
+                const rows = tableBody.querySelectorAll('tr');
+
+                if (rows.length > 1) {
+                    rows[rows.length - 1].remove();
+                    calculateGrandTotal();
+                } else {
+                    alert('Debe haber al menos una fila en la tabla.');
+                }
+            });
+
+            // Print functionality using native browser print
+            document.getElementById('printBtn').addEventListener('click', function() {
+                // Format date for display
+                const dateInput = document.getElementById('quoteDate');
+                const dateValue = dateInput.value;
+
+                if (dateValue) {
+                    const [year, month, day] = dateValue.split('-');
+                    dateInput.type = 'text';
+                    dateInput.value = `${day}/${month}/${year}`;
+                }
+
+                // Convert number inputs to text for better printing
+                const numberInputs = document.querySelectorAll('input[type="number"]');
+                numberInputs.forEach(input => {
+                    input.type = 'text';
+                });
+
+                // Use browser's native print functionality
+                window.print();
+
+                // Restore number inputs after printing
+                setTimeout(() => {
+                    if (dateValue) {
+                        dateInput.type = 'date';
+                        dateInput.value = dateValue;
+                    }
+
+                    numberInputs.forEach(input => {
+                        input.type = 'number';
+                    });
+                }, 100);
+            });
+
+            // Add event listener for after print to restore inputs
+            window.addEventListener('afterprint', function() {
+                const dateInput = document.getElementById('quoteDate');
+                const dateValue = dateInput.getAttribute('data-original-value');
+
+                if (dateValue) {
+                    dateInput.type = 'date';
+                    dateInput.value = dateValue;
+                }
+
+                // Restore number inputs
+                const numberInputs = document.querySelectorAll('input[data-original-type="number"]');
+                numberInputs.forEach(input => {
+                    input.type = 'number';
+                    input.removeAttribute('data-original-type');
+                });
+            });
+
+            // Initial calculation
+            calculateGrandTotal();
+        });
+    </script>
+</body>
+</html>
